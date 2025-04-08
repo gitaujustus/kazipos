@@ -38,3 +38,7 @@
 
   
 }
+
+.active {
+  @apply bg-baragon_brown py-2 rounded-full md:px-4 hover:transform hover:scale-105 transition-all ease-in-out duration-300 font-almarena-regular;
+}

@@ -16,3 +16,22 @@ export const NextIcon = () => {
   
     );
   };
+
+  
+export const ArrowTopRightIcon = ({
+  }) => {
+    return (
+      <svg
+        viewBox="0 0 44 44"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect width="44" height="44" rx="22" fill="#0057B8" />
+        <path
+          d="M16.3431 18.323L24.2627 18.323L15.636 26.9497L17.0502 28.364L25.6769 19.7373L25.6769 27.6569H27.6568V16.3431H16.3431L16.3431 18.323Z"
+          fill="white"
+        />
+      </svg>
+    );
+  };
+  

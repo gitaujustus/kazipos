@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 // import Cursor from "@/components/customCursor";
 
 // AlmarenaNeue Fonts
@@ -155,7 +156,7 @@ export default function NavLayout({ children }) {
       className={`${almarenaRegular.variable} ${almarenaBold.variable} ${almarenaSemiBold.variable} ${almarenaMedium.variable} ${almarenaLight.variable} ${almarenaRegularItalic.variable} ${almarenaBoldItalic.variable} ${almarenaLightItalic.variable} ${helveticaRegular.variable} ${helveticaBold.variable} ${helveticaSemiBold.variable} ${helveticaLight.variable} ${helveticaThin.variable} ${helveticaRegularItalic.variable} ${helveticaBoldItalic.variable} ${helveticaLightItalic.variable} ${helveticaThinItalic.variable}`}
     >
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* <Navbar /> */}
+        <Navbar />
         {children}
         {/* <Cursor /> */}
         {/* <Footer /> */}

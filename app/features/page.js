@@ -100,7 +100,7 @@ export default function Features() {
         viewport={{ once: false }}
         className="">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] 2xl:text-6xl font-inter font-bold text-red_republic leading-tight xl:leading-[120%] text-center mb-6 sm:mb-8 md:mb-9 lg:mb-10 xl:mb-[41px] 2xl:mb-12">
-            Learn more about KaziPOS's features
+            Learn more about KaziPOS&apos;s features
           </h1>
           <p className="text-black text-base sm:text-base md:text-lg lg:text-lg xl:text-[18px] 2xl:text-xl font-inter font-normal leading-tight xl:leading-[120%] text-center w-full max-w-[320px] sm:max-w-[400px] md:max-w-[480px] lg:max-w-[520px] xl:max-w-[557px] 2xl:max-w-[650px] mx-auto">
             KaziPOS is packed full of features that help you save time and work more effectively.

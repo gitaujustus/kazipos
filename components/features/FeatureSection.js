@@ -1,7 +1,8 @@
-
+"use client"
 import Image from "next/image";
 import { NextIcon } from "../icons";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const FeatureSection = ({
   title,
@@ -12,7 +13,12 @@ const FeatureSection = ({
   link = "/contact",
 }) => {
   const contentSection = (
-    <div className=" w-full sm:w-[44.72vw]  sm:h-[500px] lg:h-[600px] xl:h-[650px] flex flex-col gap-[10px] bg-red_republic rounded-lg md:rounded-xl lg:rounded-[25px] bg-gradient-to-b from-[#D80000] to-[#7F0808] p-6 md:p-8 lg:px-[69px] lg:py-[143px]">
+    <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1,  delay: 0.3 }}
+    viewport={{ once: false }}
+    className=" w-full sm:w-[44.72vw]  sm:h-[500px] lg:h-[600px] xl:h-[650px] flex flex-col gap-[10px] bg-red_republic rounded-lg md:rounded-xl lg:rounded-[25px] bg-gradient-to-b from-[#D80000] to-[#7F0808] p-6 md:p-8 lg:px-[69px] lg:py-[143px]">
       <h1 className="text-2xl md:text-3xl lg:text-[48px] font-inter font-bold text-white leading-[120%] mb-4 md:mb-6 lg:mb-[40px]">
         {title}
       </h1>
@@ -25,11 +31,16 @@ const FeatureSection = ({
           <NextIcon />
         </button>
       </Link>
-    </div>
+    </motion.div>
   );
 
   const imageSection = (
-    <div className=" w-full sm:w-[44.72vw] h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[650px] rounded-lg md:rounded-xl lg:rounded-[25px] relative">
+    <motion.div 
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1,  delay: 0.3 }}
+    viewport={{ once: false }}
+    className=" w-full sm:w-[44.72vw] h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[650px] rounded-lg md:rounded-xl lg:rounded-[25px] relative">
       <Image
         src={imageSrc}
         alt={imageAlt}
@@ -37,7 +48,7 @@ const FeatureSection = ({
         objectFit="cover"
         className="rounded-lg md:rounded-xl lg:rounded-[25px]"
       />
-    </div>
+    </motion.div>
   );
 
   return (
@@ -56,7 +67,7 @@ const FeatureSection = ({
         )}
       </div>
 
-        <div className="flex sm:hidden flex-col sm:flex-row items-center gap-4 md:gap-6 lg:gap-[24px] w-full px-4 md:px-6 lg:px-0">
+        <div className="flex sm:hidden flex-col sm:flex-row items-center gap-4 md:gap-6 lg:gap-[24px] w-full ">
         {isImageFirst ? (
           <>
             {imageSection}

@@ -1,14 +1,22 @@
+"use client"
 import { BulletIcon, NextIcon } from "@/components/icons";
 import Image from "next/image";
 import FeatureSection from "@/components/features/FeatureSection";
 import AdditionalFeatures from "@/components/features/additionalFeatures";
+import { motion } from "framer-motion";
 
 export default function Features() {
   return (
     <main>
-      <section className="pt-[162px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[64px] h-auto min-h-[600px] xl:h-[1024px]">
-        <div className="max-w-7xl mx-auto">
-          <div className="w-full max-w-[815px] flex flex-col gap-6 sm:gap-8 xl:gap-[40px] mb-6 sm:mb-8 xl:mb-[40px]">
+      <section className="pt-10  md:pt-28 lg:pt-32 xl:pt-[162px] 2xl:pt-48 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[64px] h-auto min-h-[600px] xl:h-[1024px]">
+        <div className="max-w-7xl mx-auto"
+        >
+          <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false }}
+          className="w-full max-w-[815px] flex flex-col gap-6 sm:gap-8 xl:gap-[40px] mb-6 sm:mb-8 xl:mb-[40px]">
             <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-[64px] font-inter font-bold text-red_republic leading-[120%] h-auto xl:h-[154px]">
               Power Your
               <br />
@@ -18,11 +26,18 @@ export default function Features() {
             <p className="text-sm sm:text-base md:text-lg xl:text-[18px] font-inter font-medium leading-[120%] w-full max-w-[488px] text-baragon_brown">
               One POS to simplify sales, manage stock, and grow your customer base
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-6 md:gap-8 lg:gap-12">
+          <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false }}
+          className="flex flex-col-reverse sm:flex-row items-center justify-between gap-6 md:gap-8 lg:gap-12">
             {/* Features list column */}
-            <div className="space-y-3 w-full sm:w-[45%] lg:w-[40%] max-w-[450px]">
+            <div 
+            
+            className="space-y-3 w-full sm:w-[45%] lg:w-[40%] max-w-[450px]">
               {[
                 "Effortless Transaction Handling",
                 "Instant Stock Updates",
@@ -59,7 +74,8 @@ export default function Features() {
             </div>
 
             {/* Image column */}
-            <div className="w-full sm:w-[55%]  lg:w-[60%] h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px] relative">
+            <div 
+            className="w-full  sm:w-[55%]  lg:w-[60%] h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px] relative">
               <Image
                 src="/assets/features/illustrations.svg"
                 alt="Person using KaziPOS software with analytics dashboard"
@@ -68,7 +84,7 @@ export default function Features() {
                 className="rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -76,52 +92,60 @@ export default function Features() {
      
 
       {/* section 2 */}
-      <section className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[64px] 2xl:px-24 pt-20 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-[162px] 2xl:pt-48 pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-[106px] 2xl:pb-32 ">
-        <div className="">
+      <section className="px-4  sm:px-6 md:px-8 lg:px-12 xl:px-[64px] 2xl:px-24 pt-20 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-[82px] 2xl:pt-48 pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-[106px] 2xl:pb-32 ">
+        <motion.div
+        initial={{ opacity: 0, y:  100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+        viewport={{ once: false }}
+        className="">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] 2xl:text-6xl font-inter font-bold text-red_republic leading-tight xl:leading-[120%] text-center mb-6 sm:mb-8 md:mb-9 lg:mb-10 xl:mb-[41px] 2xl:mb-12">
             Learn more about KaziPOS's features
           </h1>
           <p className="text-black text-base sm:text-base md:text-lg lg:text-lg xl:text-[18px] 2xl:text-xl font-inter font-normal leading-tight xl:leading-[120%] text-center w-full max-w-[320px] sm:max-w-[400px] md:max-w-[480px] lg:max-w-[520px] xl:max-w-[557px] 2xl:max-w-[650px] mx-auto">
             KaziPOS is packed full of features that help you save time and work more effectively.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-[106px] 2xl:mt-32 flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-16 xl:gap-[25px] 2xl:gap-20">
-          <FeatureSection
-            title="Effortless Transaction Handling"
-            description="Handle sales quickly and accurately with KaziPOS. Accept cash, cards, and mobile money like M-Pesa, generate instant digital or printed receipts, and keep your customers moving with fast, error-free transactions."
-            imageSrc="/assets/features/features-1.png"
-            imageAlt="Person"
-            isImageFirst={false}
-            link="#"
-          />
+        <div className="mt-16  sm:mt-20 md:mt-24 lg:mt-28 xl:mt-[106px] 2xl:mt-32 flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-16 xl:gap-[25px] 2xl:gap-20">
+         
+            <FeatureSection
+              title="Effortless Transaction Handling"
+              description="Handle sales quickly and accurately with KaziPOS. Accept cash, cards, and mobile money like M-Pesa, generate instant digital or printed receipts, and keep your customers moving with fast, error-free transactions."
+              imageSrc="/assets/features/features-1.png"
+              imageAlt="Person"
+              isImageFirst={false}
+              link="#"
+            />
 
-          <FeatureSection
-            title="Instant Stock Updates"
-            description="Stay on top of your inventory with live tracking. KaziPOS updates stock levels as sales happen, sends low-stock alerts, and simplifies reordering—perfect for managing daily essentials or specialty items."
-            imageSrc="/assets/features/features-2.png"
-            imageAlt="Person"
-            isImageFirst={true}
-            link="#"
-          />
+         
+            <FeatureSection
+              title="Instant Stock Updates"
+              description="Stay on top of your inventory with live tracking. KaziPOS updates stock levels as sales happen, sends low-stock alerts, and simplifies reordering—perfect for managing daily essentials or specialty items."
+              imageSrc="/assets/features/features-2.png"
+              imageAlt="Person"
+              isImageFirst={true}
+              link="#"
+            />
 
-          <FeatureSection
-            title="Client Engagement Solutions"
-            description="Build lasting relationships with loyalty programs, purchase history tracking, and personalized marketing. Send targeted offers via SMS or email to bring customers back again and again."
-            imageSrc="/assets/features/features-1.png"
-            imageAlt="Person"
-            isImageFirst={false}
-            link="#"
-          />
+          
+            <FeatureSection
+              title="Client Engagement Solutions"
+              description="Build lasting relationships with loyalty programs, purchase history tracking, and personalized marketing. Send targeted offers via SMS or email to bring customers back again and again."
+              imageSrc="/assets/features/features-1.png"
+              imageAlt="Person"
+              isImageFirst={false}
+              link="#"
+            />
 
-          <FeatureSection
-            title="Adaptable to Your Business Size"
-            description="From solo entrepreneurs to growing enterprises, KaziPOS adapts to your needs. Start with core features and scale up with multi-user access and advanced reporting as your business expands."
-            imageSrc="/assets/features/features-2.png"
-            imageAlt="Person"
-            isImageFirst={true}
-            link="#"
-          />
+            <FeatureSection
+              title="Adaptable to Your Business Size"
+              description="From solo entrepreneurs to growing enterprises, KaziPOS adapts to your needs. Start with core features and scale up with multi-user access and advanced reporting as your business expands."
+              imageSrc="/assets/features/features-2.png"
+              imageAlt="Person"
+              isImageFirst={true}
+              link="#"
+            />
         </div>
       </section>
 

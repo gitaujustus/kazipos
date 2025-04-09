@@ -52,7 +52,7 @@ const Navbar = () => {
   const menuItems = [
     {
       href: "/",
-      label: <HiOutlineHome className="w-6 h-6 2xl:w-10 2xl:h-10 text-white" />,
+      label: <HiOutlineHome className="w-6 h-6 2xl:w-10 2xl:h-10 " />,
       isIcon: true,
     },
     // { href: '/', label: <HiOutlineHome size={20} />, isIcon: true },
@@ -71,12 +71,12 @@ const Navbar = () => {
       href: "/sign_up",
       label: "Get Started",
       className:
-        "bg-red_shimmer text-red_reign px-4 py-1 rounded-full text-center",
+        "bg-red_republic text-white px-4 py-1 rounded-full text-center",
     },
   ];
 
   return (
-    <div className="flex items-center justify-between bg-white text-red_republic w-full xl:h-[76px] px-4 py-2 2xl:py-4 2xl:px-10   mx-auto relative z-20 font-inter">
+    <div className="flex items-center justify-between  text-red_republic w-full xl:h-[76px] px-4 py-2 2xl:py-4 2xl:px-10   mx-auto relative z-20 font-inter border-b border-gray-300">
       {/* Logo */}
       <div className="flex items-center justify-between gap-1 md:gap-2 2xl:gap-4">
         {/* <Logo width={20} height={20} className="text-red_shimmer" /> */}
@@ -112,14 +112,14 @@ const Navbar = () => {
             {pathname === item.href && (
               <motion.div
                 layoutId="nav-highlight"
-                className="absolute inset-0 bg-baragon_brown rounded-full "
+                className="absolute inset-0 bg-baragon_brown rounded-full  "
                 style={{ zIndex: -1 }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
               />
             )}
             <span
               className={`relative z-10 px-2 lg:px-4 py-2 text-nowrap 2xl:text-[1.8rem] ${
-                pathname === item.href ? "" : ""
+                pathname === item.href ? "text-white" : ""
               }`}
             >
               {item.label}
@@ -157,7 +157,7 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
             ref={menuRef}
-            className="absolute top-full left-0 right-0 mt-1 mx-1 bg-red_reign rounded-xl px-2 py-6 md:p-4 flex flex-col gap-4 md:hidden shadow-lg"
+            className="absolute top-full left-0 right-0 border-t md:border-t-0  bg-white  px-2 py-6 md:p-4 flex flex-col gap-4 md:hidden shadow-lg md:border-b border-gray-300"
           >
             <div className="flex flex-col gap-4">
               {menuItems.map((item, index) => (

@@ -2,6 +2,44 @@ import { Cloud } from "@/icons";
 import React from "react";
 
 export default function Hero() {
+  const features = [
+    {
+      text: "AI-Powered",
+      desc: "Handles stock, payments, trends, and more.",
+      position: { top: "5%", left: "5%" },
+    },
+    {
+      text: "Customer Management",
+      desc: "Track leads, campaigns, and loyalty.",
+      position: { top: "5%", right: "5%" },
+    },
+    {
+      text: "Access Anywhere",
+      desc: "Real-time, syncable data. Anytime, anywhere.",
+      position: { top: "25%", right: "0%" },
+    },
+    {
+      text: "No Installation",
+      desc: "Just open your browser—no setup needed.",
+      position: { bottom: "15%", right: "5%" },
+    },
+    {
+      text: "User Access Limit",
+      desc: "Control who sees what with user roles.",
+      position: { bottom: "5%", left: "50%", transform: "translateX(-50%)" },
+    },
+    {
+      text: "Service Management",
+      desc: "Handle services: bookings, repairs, & escalations.",
+      position: { bottom: "15%", left: "5%" },
+    },
+    {
+      text: "Reports",
+      desc: "Smart reports for sales, stock, profit & insights.",
+      position: { top: "25%", left: "0%" },
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-700 to-black text-white flex flex-col items-center py-10 px-4">
       <h1 className="text-3xl sm:text-5xl xl:text-[64px] font-semibold text-center xl:max-w-[1075px] leading-[120%]">
@@ -37,58 +75,23 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Feature bubbles */}
-        {/* <div className="hidden  grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-6 mt-[28rem] sm:mt-[32rem] px-4 z-20 relative">
-          <div className="relative -top-96">
-            <Feature
-              icon={<Cloud />}
-              text="AI-Powered"
-              desc="Handles stock, payments, trends, and more."
-            />
-          </div>
-          <div className="relative -top-96 left-96">
-            <Feature
-              icon={<Cloud />}
-              text="Customer Management"
-              desc="Track leads, campaigns, and loyalty."
-            />
-          </div>
-          <div className="relative -top-52">
-            <Feature
-              icon={<Cloud />}
-              text="Access Anywhere"
-              desc="Real-time, syncable data. Anytime, anywhere."
-            />
-          </div>
-          <div className="relative -top-72">
-            <Feature
-              icon={<Cloud />}
-              text="No Installation"
-              desc="Just open your browser—no setup needed."
-            />
-          </div>
-          <div className="relative top-20">
-            <Feature
-              icon={<Cloud />}
-              text="User Access Limit"
-              desc="Control who sees what with user roles."
-            />
-          </div>
-          <div className="relative -top-32">
-            <Feature
-              icon={<Cloud />}
-              text="Service Management"
-              desc="Handle services: bookings, repairs, & escalations."
-            />
-          </div>
-          <div className="relative -top-52">
-            <Feature
-              icon={<Cloud />}
-              text="Reports"
-              desc="Smart reports for sales, stock, profit & insights."
-            />
-          </div>
-        </div> */}
+        {/* Feature bubbles for large screens */}
+        <div className="hidden lg:block">
+          {features.map((feature, index) => (
+            <div key={index} className="absolute z-20" style={feature.position}>
+              <Feature icon={<Cloud />} text={feature.text} desc={feature.desc} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Feature bubbles for smaller screens */}
+      <div className="lg:hidden mt-10 px-4">
+        <div className="grid grid-cols-1 gap-6">
+          {features.map((feature, index) => (
+            <Feature key={index} icon={<Cloud />} text={feature.text} desc={feature.desc} />
+          ))}
+        </div>
       </div>
     </div>
   );

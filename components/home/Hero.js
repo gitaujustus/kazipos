@@ -22,7 +22,7 @@ export default function Hero() {
         </button>
       </div>
 
-      <div className="relative w-full max-w-[720px] mx-auto aspect-square mt-10 sm:mt-20 lg:mt-96">
+      <div className="relative w-full max-w-[720px] mx-auto aspect-square mt-10 sm:mt-20">
         {/* Concentric Rings */}
         <ConcentricRings className="absolute inset-0" />
 
@@ -38,7 +38,7 @@ export default function Hero() {
         </div>
 
         {/* Feature bubbles */}
-        <div className="hidden  grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-6 mt-[28rem] sm:mt-[32rem] px-4 z-20 relative">
+        {/* <div className="hidden  grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-6 mt-[28rem] sm:mt-[32rem] px-4 z-20 relative">
           <div className="relative -top-96">
             <Feature
               icon={<Cloud />}
@@ -88,7 +88,7 @@ export default function Hero() {
               desc="Smart reports for sales, stock, profit & insights."
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

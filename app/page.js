@@ -200,7 +200,7 @@ const HomePageInProgress = () => {
 
         <div className="h-8">
           <p className="text-lg text-gray-600 mb-6">
-            We're crafting something amazing for you{renderDots()}
+            We&apos;re crafting something amazing for you{renderDots()}
           </p>
         </div>
 

@@ -49,7 +49,7 @@ const Contacts = () => {
       </div>
 
       {/* form */}
-      <div className="py-[20px] sm:py-[30px] md:py-[35px] xl:py-[41px] px-[20px] sm:px-[40px] md:px-[40px] xl:px-[78px] gap-[10px] w-full md:min-w-[47vw]">
+      <div className=" px-[20px] sm:px-[40px] md:px-[40px] xl:px-[78px] gap-[10px] w-full md:min-w-[47vw]">
         <ContactForm />
       </div>
     </main>

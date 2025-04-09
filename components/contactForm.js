@@ -48,7 +48,7 @@ const ContactForm = () => {
 
   return (
     <form
-      className="mt-[60px] sm:mt-[90px] md:mt-[120px] xl:mt-[148px]"
+      className="my-[60px] sm:my-[90px] md:my-[120px] xl:my-[179px]"
       onSubmit={handleSubmit(onSubmit)}
     >
       <h1 className="text-red_reign text-[24px] sm:text-[28px] xl:text-[32px] leading-[120%] font-inter font-medium pb-[20px] sm:pb-[30px] xl:pb-[41px]">

@@ -160,7 +160,7 @@ export default function NavLayout({ children }) {
         <Navbar />
         {children}
         {/* <Cursor /> */}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

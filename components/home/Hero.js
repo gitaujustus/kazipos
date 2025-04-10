@@ -90,10 +90,10 @@ export default function Hero() {
       </p>
 
       <div className="flex gap-[40px]">
-        <button className="bg-neutral-light text-baragon_brown font-inter xl:w-[198px] xl:h-[48px] font-semibold p-[10px] rounded-[35px] shadow-md shadow-black hover:bg-gray-100">
+        <button className="bg-neutral-light text-baragon_brown font-inter xl:w-[198px] xl:h-[48px] font-semibold p-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-gray-100">
           Start Free Trial
         </button>
-        <button className="bg-neutral-light text-baragon_brown font-inter xl:w-[198px] xl:h-[48px] font-semibold p-[10px] rounded-[35px] shadow-md shadow-black hover:bg-gray-100">
+        <button className="bg-neutral-light text-baragon_brown font-inter xl:w-[198px] xl:h-[48px] font-semibold p-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-gray-100">
           Book a Demo
         </button>
       </div>
@@ -104,37 +104,36 @@ export default function Hero() {
 
         {/* Image */}
         <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div className="bg-black rounded-full border-4 border-red-500 p-2">
+          <div className="bg-black rounded-full">
             <img
               src="/assets/Hero-Center.png"
               alt="Barista using POS"
-              className="rounded-full w-48 h-48 sm:w-64 sm:h-64 object-cover border-4 border-white"
+              className="rounded-full w-44 h-44 sm:w-64 sm:h-64 object-cover border border-white"
             />
           </div>
         </div>
 
         {/* Feature bubbles for large screens */}
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           {features.map((feature, index) => (
             <div key={index} className="absolute z-20" style={feature.position}>
-              <Feature icon={<Cloud />} text={feature.text} desc={feature.desc} />
+              <Feature
+                icon={<Cloud />}
+                text={feature.text}
+                desc={feature.desc}
+              />
             </div>
           ))}
         </div>
 
-
         {/* Feature bubbles for small screens */}
-        <div className="block lg:hidden">
+        {/* <div className="block xl:hidden">
           {featuresSmall.map((featuresSmall, index) => (
             <div key={index} className="absolute z-20" style={featuresSmall.position}>
               <Feature icon={<Cloud />} text={featuresSmall.text} desc={featuresSmall.desc} />
             </div>
           ))}
-        </div>
-
-
-
-
+        </div> */}
       </div>
 
       {/* Feature bubbles for smaller screens */}
@@ -154,7 +153,9 @@ function Feature({ icon, text, desc }) {
     <div className="w-[150px] md:w-[262px]  max-w-[262px] bg-white shadow-lg py-[6px] md:py-[26px] px-[15px] md:px-[25px] rounded-[30px]">
       <div className="flex items-center gap-[10px]">
         {icon}
-        <h3 className="text-[6px] md:text-[12px] font-inter text-red_republic">{text}</h3>
+        <h3 className="text-[6px] md:text-[12px] font-inter text-red_republic">
+          {text}
+        </h3>
       </div>
       <p className="text-[7px] md:text-[14px] text-neutral-dark">{desc}</p>
     </div>

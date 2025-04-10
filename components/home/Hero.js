@@ -1,4 +1,4 @@
-import { Cloud } from "@/icons";
+import { Cloud, HeroGradient } from "@/icons";
 import React from "react";
 
 export default function Hero() {
@@ -79,70 +79,59 @@ export default function Hero() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-700 to-black text-white flex flex-col items-center py-10 px-4">
-      <h1 className="text-3xl sm:text-5xl xl:text-[64px] font-inter font-semibold text-center xl:max-w-[1075px] leading-[120%]">
-      The First AI-Powered POS That Automates Sales, Inventory & Accounting
-      </h1>
-      <p className="text-center text-sm sm:text-lg xl:text-[18px] pt-[41px] pb-[55px] font-inter">
-      A powerful POS system for Kenyan retail—perfect for small shops to large enterprises.
-      </p>
-
-      <div className="flex gap-[40px]">
-        <button className="bg-neutral-light hover:bg-red_reign  hover:border hover:border-e-neutral-highlight  text-baragon_brown hover:text-white font-inter xl:w-[198px] xl:h-[48px] px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] relative z-20">
-          Start Free Trial
-        </button>
-       
-        <button className="border border-white text-white font-inter xl:w-[198px] xl:h-[48px] p-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-white hover:text-red_reign relative z-20">
-          Book a Demo
-        </button>
+    <div className="min-h-screen text-white flex flex-col items-center py-10 px-4 relative overflow-hidden">
+      {/* SVG Background */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <HeroGradient />
       </div>
 
-      <div className="relative w-full max-w-[920px] mx-auto aspect-square -top-12 sm:-top-32">
-        {/* Concentric Rings - Replaced with gradient rings */}
-        <ConcentricRingsWithGradient className="absolute inset-0" />
+      {/* Content */}
+      <div className="relative z-10">
+        <h1 className="text-3xl sm:text-5xl xl:text-[64px] font-inter font-semibold text-center xl:max-w-[1075px] leading-[120%]">
+          The First AI-Powered POS That Automates Sales, Inventory & Accounting
+        </h1>
+        <p className="text-center text-sm sm:text-lg xl:text-[18px] pt-[41px] pb-[55px] font-inter">
+          A powerful POS system for Kenyan retail—perfect for small shops to large enterprises.
+        </p>
 
-        {/* Image */}
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div className="bg-black rounded-full w-[60%] h-[60%]">
-            <img
-              src="/assets/Hero-Center.png"
-              alt="Barista using POS"
-              className="rounded-full w-full sm:h-full object-cover"
-            />
-          </div>
+        <div className="flex gap-[40px] items-center justify-center">
+          <button className="bg-neutral-light hover:bg-red_reign hover:border hover:border-e-neutral-highlight text-baragon_brown hover:text-white font-inter xl:w-[198px] xl:h-[48px] px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] relative z-20">
+            Start Free Trial
+          </button>
+          <button className="border border-white text-white font-inter xl:w-[198px] xl:h-[48px] p-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-white hover:text-red_reign relative z-20">
+            Book a Demo
+          </button>
         </div>
 
-        {/* Feature bubbles for large screens */}
-        <div className="hidden xl:block">
-          {features.map((feature, index) => (
-            <div key={index} className="absolute z-20" style={feature.position}>
-              <Feature
-                icon={<Cloud />}
-                text={feature.text}
-                desc={feature.desc}
+        <div className="relative w-full max-w-[920px] mx-auto aspect-square -top-12 sm:-top-32">
+          {/* Concentric Rings */}
+          <ConcentricRingsWithGradient className="absolute inset-0" />
+
+          {/* Image */}
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <div className="bg-black rounded-full w-[60%] h-[60%]">
+              <img
+                src="/assets/Hero-Center.png"
+                alt="Barista using POS"
+                className="rounded-full w-full sm:h-full object-cover"
               />
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* Feature bubbles for small screens */}
-        {/* <div className="block xl:hidden">
-          {featuresSmall.map((featuresSmall, index) => (
-            <div key={index} className="absolute z-20" style={featuresSmall.position}>
-              <Feature icon={<Cloud />} text={featuresSmall.text} desc={featuresSmall.desc} />
-            </div>
-          ))}
-        </div> */}
+          {/* Feature bubbles for large screens */}
+          <div className="hidden xl:block">
+            {features.map((feature, index) => (
+              <div key={index} className="absolute z-20" style={feature.position}>
+                <Feature
+                  icon={<Cloud />}
+                  text={feature.text}
+                  desc={feature.desc}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-
-      {/* Feature bubbles for smaller screens */}
-      {/* <div className="lg:hidden mt-10 px-4">
-        <div className="grid grid-cols-1 gap-6">
-          {features.map((feature, index) => (
-            <Feature key={index} icon={<Cloud />} text={feature.text} desc={feature.desc} />
-          ))}
-        </div>
-      </div> */}
     </div>
   );
 }
@@ -161,9 +150,8 @@ function Feature({ icon, text, desc }) {
   );
 }
 
-// New component with gradient rings using pseudo-elements
 function ConcentricRingsWithGradient() {
-  const rings = [49.95, 75, 100.05, 124.95, 150]; // Percentages of the parent container
+  const rings = [49.95, 75, 100.05, 124.95, 150];
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden">
@@ -178,10 +166,10 @@ function ConcentricRingsWithGradient() {
             top: "50%",
             transform: "translate(-50%, -50%)",
             background: "transparent",
-            border: "4px solid #FFFFFF", // Switch to border for clearer stroke
-            maskImage: "linear-gradient(to bottom, transparent 20%, black 80%)", // Keep your original partial visibility
+            border: "4px solid #FFFFFF",
+            maskImage: "linear-gradient(to bottom, transparent 20%, black 80%)",
             WebkitMaskImage: "linear-gradient(to bottom, transparent 20%, black 80%)",
-            opacity: 0.1, // Subtle effect
+            opacity: 0.1,
           }}
         />
       ))}

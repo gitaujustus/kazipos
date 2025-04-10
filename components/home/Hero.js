@@ -81,8 +81,8 @@ export default function Hero() {
   return (
     <div className="min-h-screen text-white flex flex-col items-center py-10 px-4 relative overflow-hidden">
       {/* SVG Background */}
-      <div className="absolute inset-0 w-full h-full z-0">
-        <HeroGradient className="h-full" />
+      <div className="absolute inset-0 w-full h-full z-0 bg-red_republic">
+        <HeroGradient className="h-full w-full" />
       </div>
 
       {/* Content */}

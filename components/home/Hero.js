@@ -6,37 +6,37 @@ export default function Hero() {
     {
       text: "AI-Powered",
       desc: "Handles stock, payments, trends, and more.",
-      position: { top: "5%", left: "-20%" },
+      position: { top: "27%", left: "-15%" },
     },
     {
       text: "Customer Management",
       desc: "Track leads, campaigns, and loyalty.",
-      position: { top: "5%", right: "-20%" },
+      position: { top: "25%", right: "-20%" },
     },
     {
       text: "Access Anywhere",
       desc: "Real-time, syncable data. Anytime, anywhere.",
-      position: { top: "40%", right: "-20%" },
+      position: { top: "52%", right: "-20%" },
     },
     {
       text: "No Installation",
       desc: "Just open your browser—no setup needed.",
-      position: { bottom: "10%", right: "-15%" },
+      position: { bottom: "10%", right: "-13%" },
     },
     {
       text: "User Access Limit",
       desc: "Control who sees what with user roles.",
-      position: { bottom: "0%", left: "50%", transform: "translateX(-50%)" },
+      position: { bottom: "-8%", left: "50%", transform: "translateX(-50%)" },
     },
     {
       text: "Service Management",
       desc: "Handle services: bookings, repairs, & escalations.",
-      position: { bottom: "10%", left: "-20%" },
+      position: { bottom: "8%", left: "-10%" },
     },
     {
       text: "Reports",
       desc: "Smart reports for sales, stock, profit & insights.",
-      position: { top: "40%", left: "-20%" },
+      position: { top: "53%", left: "-20%" },
     },
   ];
 
@@ -90,25 +90,26 @@ export default function Hero() {
       </p>
 
       <div className="flex gap-[40px]">
-        <button className="bg-neutral-light text-baragon_brown font-inter xl:w-[198px] xl:h-[48px] font-semibold p-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-gray-100">
+        <button className="bg-neutral-light  hover:bg-red_reign  text-baragon_brown hover:text-white font-inter xl:w-[198px] xl:h-[48px] p-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] relative z-20">
           Start Free Trial
         </button>
-        <button className="bg-neutral-light text-baragon_brown font-inter xl:w-[198px] xl:h-[48px] font-semibold p-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-gray-100">
+       
+        <button className="border border-white text-white font-inter xl:w-[198px] xl:h-[48px] p-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-gray-100 relative z-20">
           Book a Demo
         </button>
       </div>
 
-      <div className="relative w-full max-w-[720px] mx-auto aspect-square mt-10 sm:mt-20">
-        {/* Concentric Rings */}
-        <ConcentricRings className="absolute inset-0" />
+      <div className="relative w-full max-w-[920px] mx-auto aspect-square -top-32">
+        {/* Concentric Rings - Replaced with gradient rings */}
+        <ConcentricRingsWithGradient className="absolute inset-0" />
 
         {/* Image */}
         <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div className="bg-black rounded-full">
+          <div className="bg-black rounded-full w-[60%] h-[60%]">
             <img
               src="/assets/Hero-Center.png"
               alt="Barista using POS"
-              className="rounded-full w-44 h-44 sm:w-64 sm:h-64 object-cover border border-white"
+              className="rounded-full w-44 h-44 sm:w-full sm:h-full object-cover"
             />
           </div>
         </div>
@@ -150,7 +151,7 @@ export default function Hero() {
 
 function Feature({ icon, text, desc }) {
   return (
-    <div className="w-[150px] md:w-[262px]  max-w-[262px] bg-white shadow-lg py-[6px] md:py-[26px] px-[15px] md:px-[25px] rounded-[30px]">
+    <div className="w-[150px] md:w-[262px] max-w-[262px] bg-white shadow-lg py-[6px] md:py-[26px] px-[15px] md:px-[25px] rounded-[30px]">
       <div className="flex items-center gap-[10px]">
         {icon}
         <h3 className="text-[6px] md:text-[12px] font-inter text-red_republic">
@@ -162,21 +163,27 @@ function Feature({ icon, text, desc }) {
   );
 }
 
-function ConcentricRings() {
-  const rings = [33.3, 50, 66.7, 83.3, 100]; // Percentages of the parent container
+// New component with gradient rings using pseudo-elements
+function ConcentricRingsWithGradient() {
+  const rings = [49.95, 75, 100.05, 124.95, 150]; // Percentages of the parent container
 
   return (
-    <div className="absolute inset-0 z-0">
+    <div className="absolute inset-0 z-0 overflow-hidden">
       {rings.map((percent, i) => (
         <div
           key={i}
-          className="absolute rounded-full border border-white/70"
+          className="absolute rounded-full"
           style={{
             width: `${percent}%`,
             height: `${percent}%`,
             left: "50%",
             top: "50%",
             transform: "translate(-50%, -50%)",
+            background: "transparent",
+            border: "4px solid #FFFFFF", // Switch to border for clearer stroke
+            maskImage: "linear-gradient(to bottom, transparent 20%, black 80%)", // Keep your original partial visibility
+            WebkitMaskImage: "linear-gradient(to bottom, transparent 20%, black 80%)",
+            opacity: 0.1, // Subtle effect
           }}
         />
       ))}

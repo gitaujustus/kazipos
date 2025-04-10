@@ -8,16 +8,17 @@ import { motion } from "framer-motion";
 export default function Features() {
   return (
     <main>
-      <section className="pt-10  md:pt-28 lg:pt-32 xl:pt-[162px] 2xl:pt-48 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[64px] h-auto min-h-[600px] xl:h-[1024px]">
+      <section className="pt-10  md:pt-[70px] xl:pt-[86px] 2xl:pt-48 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[64px] h-auto min-h-[600px] ">
         <div className="max-w-7xl mx-auto"
         >
           <motion.div
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: false }}
-          className="w-full max-w-[815px] flex flex-col gap-6 sm:gap-8 xl:gap-[40px] mb-6 sm:mb-8 xl:mb-[40px]">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-[64px] font-inter font-bold text-red_republic leading-[120%] h-auto xl:h-[154px]">
+          className="w-full max-w-[815px] flex flex-col gap-6 sm:gap-8 xl:gap-[40px] mb-6 sm:mb-8 xl:mb-[40px]"
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-[64px] font-inter font-bold text-red_republic leading-[120%] h-auto xl:h-[154px] ">
               Power Your
               <br />
               Business with KaziPOS
@@ -31,9 +32,9 @@ export default function Features() {
           <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: false }}
-          className="flex flex-col-reverse sm:flex-row items-center justify-between gap-6 md:gap-8 lg:gap-12">
+          className="flex flex-col-reverse bg-white sm:flex-row items-center justify-between gap-6 md:gap-8 lg:gap-12">
             {/* Features list column */}
             <div 
             
@@ -61,21 +62,23 @@ export default function Features() {
               ))}
 
               <div className="flex justify-center sm:justify-start">
+                {/*  */}
                 <button
                   style={{
                     boxShadow:
                       "2px 2px 15px 0px rgba(0, 0, 0, 0.25), inset 0px -2px 10px 0px rgba(0, 0, 0, 0.25)",
                   }}
-                  className=" mt-6 sm:mt-8 xl:mt-10 w-full max-w-[198px] bg-red_republic h-10 sm:h-12 xl:h-12 text-red_shimmer text-sm sm:text-base xl:text-base leading-none font-medium p-2.5 sm:p-3 xl:p-3 rounded-full"
+                  className=" mt-6 sm:mt-8 xl:mt-10 w-full max-w-[198px] bg-red_republic h-10 sm:h-12 xl:h-12 text-red_shimmer text-sm sm:text-base xl:text-base leading-none font-medium p-2.5 sm:p-3 xl:p-3 rounded-full hover:bg-red_reign transition-all duration-300 cursor-pointer"
                 >
                   Get Started Today
                 </button>
               </div>
+                  
             </div>
 
             {/* Image column */}
             <div 
-            className="w-full  sm:w-[55%]  lg:w-[60%] h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px] relative">
+            className="w-full  sm:w-[90%]  lg:w-[100%] h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px]  md:mt-[-100px] relative">
               <Image
                 src="/assets/features/illustrations.svg"
                 alt="Person using KaziPOS software with analytics dashboard"
@@ -92,11 +95,11 @@ export default function Features() {
      
 
       {/* section 2 */}
-      <section className="px-4  sm:px-6 md:px-8 lg:px-12 xl:px-[64px] 2xl:px-24 pt-20 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-[82px] 2xl:pt-48 pb-16 sm:pb-20 md:pb-24 lg:pb-28 xl:pb-[106px] 2xl:pb-32 ">
+      <section className="px-4  sm:px-6 md:px-8 lg:px-12 xl:px-[64px] 2xl:px-24 2xl:pb-32 pt-20  md:pt-[100px] xl:pt-[182px] 2xl:pt-48 ">
         <motion.div
-        initial={{ opacity: 0, y:  100 }}
+        initial={{ opacity: 0, y:  50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
         viewport={{ once: false }}
         className="">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[48px] 2xl:text-6xl font-inter font-bold text-red_republic leading-tight xl:leading-[120%] text-center mb-6 sm:mb-8 md:mb-9 lg:mb-10 xl:mb-[41px] 2xl:mb-12">

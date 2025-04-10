@@ -8,7 +8,7 @@ const Contacts = () => {
   return (
     <main className="flex flex-col md:flex-row">
       {/* locations */}
-      <div className="pt-[80px] pb-[65px] sm:pt-[100px] md:pt-[155px]  px-[20px] sm:px-[30px] md:px-[42px] xl:px-[56px] gap-[10px] w-full md:min-w-[37vw] bg-red_shimmer">
+      <div className="pt-[80px] pb-[65px] sm:pt-[100px] md:pt-[155px]  px-[20px] sm:px-[30px] md:px-[100px] xl:px-[156px] gap-[10px] w-full md:min-w-[37vw] bg-red_shimmer">
         <h1 className="text-[48px] sm:text-[60px] md:text-[72px] xl:text-[96px] leading-[120%] font-inter font-semibold text-red_republic">
           Our locations
         </h1>

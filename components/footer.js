@@ -4,12 +4,12 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="px-4 sm:px-8 md:px-[40px] xl:px-[68px] 2xl:px-[74px] py-8 md:py-10 lg:py-12 2xl:py-16 flex flex-col gap-8 md:gap-12 lg:gap-16 font-inter text-sm sm:text-base bg-red_shimmer text-baragon_brown">
+    <footer className="px-4 sm:px-8 md:px-[40px] xl:px-[68px] 2xl:px-[74px] py-8 md:py-10 lg:py-12 2xl:py-16 flex flex-col gap-8 md:gap-[32px] lg:gap-[52px] font-inter text-sm sm:text-base bg-red_shimmer text-baragon_brown">
       {/* Top div */}
       <div className="flex flex-col  md:flex-row gap-[38.6px] md:gap-[58px] lg:gap-[77px] xl:gap-[116px] 2xl:gap-[154.6px]">
         {/* Part one */}
         <div className="flex items-center text-center justify-center md:text-left  md:justify-start  flex-col gap-6 w-full md:w-2/5 lg:w-[472px]">
-          <div className="w-full">
+          <div className="w-full flex justify-center md:justify-start">
             {/* <Image
               src="/assets/Kazi Afya Logo.svg"
               alt="logo"
@@ -166,6 +166,14 @@ const Footer = () => {
           </p>
         </div>
       </div>
+
+      {/* extreme bottom div */}
+      <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-[34px] lg:gap-[64px] justify-center items-center font-inter ">
+        <p className="text-sm sm:text-base lg:text-[16px] 2xl:text-xl leading-[24px] text-baragon_brown font-normal ">
+          Powered by <Link href="#" className="font-semibold text-red_republic">Hillgan Innovations</Link>
+        </p>
+      </div>
+
     </footer>
   );
 };

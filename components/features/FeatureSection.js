@@ -14,19 +14,21 @@ const FeatureSection = ({
 }) => {
   const contentSection = (
     <motion.div
-    initial={{ opacity: 0, y: 50 }}
+    initial={{ opacity: 0.5, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1,  delay: 0.3 }}
+    transition={{ duration: 0.8,  delay: 0.3 }}
     viewport={{ once: false }}
-    className=" w-full sm:w-[44.72vw]  sm:h-[500px] lg:h-[600px] xl:h-[650px] flex flex-col gap-[10px] bg-red_republic rounded-lg md:rounded-xl lg:rounded-[25px] bg-gradient-to-b from-[#D80000] to-[#7F0808] p-6 md:p-8 lg:px-[69px] lg:py-[143px]">
-      <h1 className="text-2xl md:text-3xl lg:text-[48px] font-inter font-bold text-white leading-[120%] mb-4 md:mb-6 lg:mb-[40px]">
-        {title}
-      </h1>
-      <p className="text-white text-sm md:text-base lg:text-[16px] font-inter font-400 leading-[28px]">
-        {description}
-      </p>
+    className=" w-full sm:w-[44.72vw]  sm:h-[500px] lg:h-[600px] xl:h-[494px] bg-red_republic rounded-lg md:rounded-xl lg:rounded-[25px] bg-gradient-to-b from-[#D80000] to-[#7F0808] p-6 md:p-8 lg:px-[69px] lg:py-[50px] flex flex-col gap-10 md:gap-[60px]">
+      <div className="flex flex-col gap-[32px]">
+        <h1 className="text-2xl md:text-3xl lg:text-[48px] font-inter font-bold text-white leading-[120%] ]">
+          {title}
+        </h1>
+        <p className="text-white text-sm md:text-base lg:text-[16px] font-inter font-400 leading-[28px]">
+          {description}
+        </p>
+      </div>
       <Link href={link}>
-        <button className="font-inter font-400 text-sm md:text-base lg:text-[16px] leading-normal lg:leading-[28px] text-white w-full md:w-auto lg:w-[167px] flex items-center justify-center md:justify-start gap-2 lg:gap-[10px] h-10 md:h-12 lg:h-[48px] mt-6 md:mt-8 lg:mt-[68px] rounded-full lg:rounded-[35px]">
+        <button className="font-inter font-normal text-sm md:text-base lg:text-[16px] leading-normal lg:leading-[28px] text-white w-full md:w-auto lg:w-[167px] flex items-center justify-center md:justify-start gap-2 lg:gap-[10px] h-10 md:h-12 lg:h-[48px]  rounded-full lg:rounded-[35px]">
           <span>Get Started Today</span>
           <NextIcon />
         </button>
@@ -36,11 +38,11 @@ const FeatureSection = ({
 
   const imageSection = (
     <motion.div 
-    initial={{ opacity: 0, y: 50 }}
+    initial={{ opacity: 0.2, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1,  delay: 0.3 }}
+    transition={{ duration: 0.8,  delay: 0.3 }}
     viewport={{ once: false }}
-    className=" w-full sm:w-[44.72vw] h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[650px] rounded-lg md:rounded-xl lg:rounded-[25px] relative">
+    className=" w-full sm:w-[44.72vw] h-[400px] sm:h-[500px] lg:h-[600px] xl:h-[484px] rounded-lg md:rounded-xl lg:rounded-[25px] relative">
       <Image
         src={imageSrc}
         alt={imageAlt}

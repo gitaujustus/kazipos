@@ -30,7 +30,7 @@ const AdditionalFeatures = () => {
   return (
     <section
       
-      className="bg-white px-0 sm:px-6 md:px-8 lg:px-12 xl:px-[64px] 2xl:px-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[117px] 2xl:py-28 flex flex-col items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-[41px] 2xl:gap-16 min-h-screen"
+      className="bg-white px-0 sm:px-6 md:px-8 lg:px-12 xl:px-[64px] 2xl:px-20 py-[56px] 2xl:py-28 flex flex-col items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-[56px] 2xl:gap-16 min-h-screen"
     >
       
      <motion.div 
@@ -38,17 +38,17 @@ const AdditionalFeatures = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: false }}
+      className="flex flex-col items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-[41px] 2xl:gap-16"
      >
-      <h1 className="font-inter font-bold text-3xl sm:text-4xl md:text-5xl  xl:text-[48px] 2xl:text-[72px] leading-tight text-center text-red_republic">
+      <h1 className="font-inter font-semibold text-3xl sm:text-4xl md:text-5xl  xl:text-[48px] 2xl:text-[72px] leading-tight text-center text-red_republic">
           Additional Features
         </h1>
 
-        <p className="font-inter font-medium text-base sm:text-lg md:text-xl lg:text-[18px] 2xl:text-xl text-center text-cosmic-void w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-[500px] xl:max-w-[557px] 2xl:max-w-[600px]">
+        <p className="font-inter font-normal text-base sm:text-lg md:text-xl lg:text-[18px] 2xl:text-xl text-center text-black w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-[500px] xl:max-w-[557px] 2xl:max-w-[600px] leading-[28px]">
         KaziPOS has more capabilities addressing common needs for Kenyan businesses and enhancing the value proposition.
         </p>
      </motion.div>
-
-      <div className="w-full  max-w-7xl 2xl:max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-[18px] 2xl:gap-10 px-4 sm:px-6 md:px-8 lg:px-0">
+      <div className="w-full max-w-7xl 2xl:max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-[18px] 2xl:gap-10 px-4 sm:px-6 md:px-8 lg:px-0">
         {additionalFeaturesData.map((feature) => (
           <AdditionalCard
             key={feature.id}

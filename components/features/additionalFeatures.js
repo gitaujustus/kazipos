@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowTopRightIcon } from "../icons";
+import { motion } from "framer-motion";
 
 const additionalFeaturesData = [
   {
@@ -14,7 +15,7 @@ const additionalFeaturesData = [
     image: "/assets/features/operations.jpeg",
     title: "Uninterrupted Operations",
     description:
-      "Keep selling even without internet. KaziPOS’s offline mode syncs data automatically when you’re back online, ideal for areas with spotty connectivity.",
+      "Keep selling even without internet. KaziPOS's offline mode syncs data automatically when you're back online, ideal for areas with spotty connectivity.",
   },
   {
     id: 3,
@@ -27,15 +28,25 @@ const additionalFeaturesData = [
 
 const AdditionalFeatures = () => {
   return (
-    <section className="bg-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[64px] 2xl:px-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[117px] 2xl:py-28 flex flex-col items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-[41px] 2xl:gap-16 min-h-screen">
+    <section
       
+      className="bg-white px-0 sm:px-6 md:px-8 lg:px-12 xl:px-[64px] 2xl:px-20 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-[117px] 2xl:py-28 flex flex-col items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-[41px] 2xl:gap-16 min-h-screen"
+    >
+      
+     <motion.div 
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: false }}
+     >
       <h1 className="font-inter font-bold text-3xl sm:text-4xl md:text-5xl  xl:text-[48px] 2xl:text-[72px] leading-tight text-center text-red_republic">
-        Additional Features
-      </h1>
+          Additional Features
+        </h1>
 
-      <p className="font-inter font-medium text-base sm:text-lg md:text-xl lg:text-[18px] 2xl:text-xl text-center text-cosmic-void w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-[500px] xl:max-w-[557px] 2xl:max-w-[600px]">
-      KaziPOS has more capabilities addressing common needs for Kenyan businesses and enhancing the value proposition.
-      </p>
+        <p className="font-inter font-medium text-base sm:text-lg md:text-xl lg:text-[18px] 2xl:text-xl text-center text-cosmic-void w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-[500px] xl:max-w-[557px] 2xl:max-w-[600px]">
+        KaziPOS has more capabilities addressing common needs for Kenyan businesses and enhancing the value proposition.
+        </p>
+     </motion.div>
 
       <div className="w-full  max-w-7xl 2xl:max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-[18px] 2xl:gap-10 px-4 sm:px-6 md:px-8 lg:px-0">
         {additionalFeaturesData.map((feature) => (
@@ -70,7 +81,12 @@ export default AdditionalFeatures;
 
 const AdditionalCard = ({ image, title, description }) => {
     return ( 
-        <div className="w-full h-full rounded-[20px] bg-white p-3 sm:p-4 lg:p-[37px] 2xl:p-5 flex flex-col gap-3 sm:gap-[15px] lg:gap-[28px] 2xl:gap-[37px] shadow-[0_0_3.8px_#0057B840] 2xl:shadow-md">
+        <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false }}
+        className="w-full h-full rounded-[20px] bg-white px-3 py-5 sm:p-4 lg:p-[37px] 2xl:p-5 flex flex-col gap-5 sm:gap-[15px] lg:gap-[28px] 2xl:gap-[37px] shadow-[0_0_3.8px_#0057B840] 2xl:shadow-md">
             <div className="w-full aspect-[294/230] relative rounded-[10px] overflow-hidden">
                 <Image 
                     src={image} 
@@ -83,8 +99,8 @@ const AdditionalCard = ({ image, title, description }) => {
 
             <h3 className="font-inter font-medium text-lg sm:text-xl lg:text-[20px] 2xl:text-[22px] text-red_republic">{title}</h3>
 
-            <p className="font-inter font-normal text-sm sm:text-base lg:text-[18px] 2xl:text-[20px] text-baragon_brown">{description}</p>
-        </div>
+            <p className="font-inter font-normal text-sm sm:text-base lg:text-[18px] 2xl:text-[20px] text-baragon_brown leading-[28px]">{description}</p>
+        </motion.div>
      );
 }
  

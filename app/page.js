@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="bg-gradient-to-r from-red_republic to-green-600 h-[100vh]">
+    <main className="bg-gradient-to-r from-red_republic to-[#3f0101] h-[100vh]">
       <Hero />
 
       {/* Section 2 - Features */}

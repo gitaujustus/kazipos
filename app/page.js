@@ -18,7 +18,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/home/Noise-Texture.png')" }}></div>
         
         {/* Optional overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-white opacity-50"></div>
+        <div className="absolute inset-0 bg-white opacity-100"></div>
 
         <div className="relative w-full z-10 mx-auto">
           <SectionLayout

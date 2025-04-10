@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
 
       {/* Section 2 - Features */}
-      <section className="min-h-screen  flex flex-col justify-center py-12 md:py-20">
+      <section className="flex flex-col justify-center pt-12 md:pt-20">
         {/* Background image instead of dot pattern */}
         {/* <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/home/Noise-Texture.png')" }}></div> */}
         

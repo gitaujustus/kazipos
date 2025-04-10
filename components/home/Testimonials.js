@@ -199,9 +199,9 @@ const Testimonials = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center mb-[20px]">
             {/* 1. Heading Section */}
-            <h1 className="text-red_republic pt-[10px] sm:pt-[120px] md:pt-[162px] pb-10 sm:pb-16 md:pb-20 font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-inter text-center">
+            <h1 className="text-red_republic  md:pt-[16px] pb-10 sm:pb-16 md:pb-20 font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-inter text-center">
                 <span>We let Our <span className="text-red_reign">Clients Success</span></span>
                 <br />
                 <span>Speak for us</span>

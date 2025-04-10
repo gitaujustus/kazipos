@@ -80,26 +80,24 @@ export default function Hero() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-700 to-black text-white flex flex-col items-center py-10 px-4">
-      <h1 className="text-3xl sm:text-5xl xl:text-[64px] font-semibold text-center xl:max-w-[1075px] leading-[120%]">
-        A powerful POS system for Kenyan retail—perfect for small shops to large
-        enterprises.
+      <h1 className="text-3xl sm:text-5xl xl:text-[64px] font-inter font-semibold text-center xl:max-w-[1075px] leading-[120%]">
+      The First AI-Powered POS That Automates Sales, Inventory & Accounting
       </h1>
       <p className="text-center text-sm sm:text-lg xl:text-[18px] pt-[41px] pb-[55px] font-inter">
-        The First AI-Powered POS That Automates Inventory, Accounting & More for
-        Unlimited Businesses.
+      A powerful POS system for Kenyan retail—perfect for small shops to large enterprises.
       </p>
 
       <div className="flex gap-[40px]">
-        <button className="bg-neutral-light  hover:bg-red_reign  text-baragon_brown hover:text-white font-inter xl:w-[198px] xl:h-[48px] p-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] relative z-20">
+        <button className="bg-neutral-light hover:bg-red_reign  hover:border hover:border-e-neutral-highlight  text-baragon_brown hover:text-white font-inter xl:w-[198px] xl:h-[48px] px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] relative z-20">
           Start Free Trial
         </button>
        
-        <button className="border border-white text-white font-inter xl:w-[198px] xl:h-[48px] p-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-gray-100 relative z-20">
+        <button className="border border-white text-white font-inter xl:w-[198px] xl:h-[48px] p-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-white hover:text-red_reign relative z-20">
           Book a Demo
         </button>
       </div>
 
-      <div className="relative w-full max-w-[920px] mx-auto aspect-square -top-32">
+      <div className="relative w-full max-w-[920px] mx-auto aspect-square -top-12 sm:-top-32">
         {/* Concentric Rings - Replaced with gradient rings */}
         <ConcentricRingsWithGradient className="absolute inset-0" />
 
@@ -109,7 +107,7 @@ export default function Hero() {
             <img
               src="/assets/Hero-Center.png"
               alt="Barista using POS"
-              className="rounded-full w-44 h-44 sm:w-full sm:h-full object-cover"
+              className="rounded-full w-full sm:h-full object-cover"
             />
           </div>
         </div>

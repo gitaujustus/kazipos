@@ -92,7 +92,7 @@ const Pricing = () => {
         viewport={{ once: false }}
       >
         <h1 className="text-center = text-baragon_brown text-[28px] md:text-[32px] lg:text-[48px] leading-[120%] font-inter font-semibold md:max-w-[56.6vw] mx-auto">
-          We&apos;ve got a pricing plan that&apos;s perfect for you
+          Affordable Pricing
         </h1>
 
         {/* Toggle button */}

@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 export default function Features() {
   return (
     <main>
-      <section className="pt-10  md:pt-28 lg:pt-32 xl:pt-[162px] 2xl:pt-48 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[64px] h-auto min-h-[600px] xl:h-[1024px]">
+      <section className="pt-10  md:pt-[70px] xl:pt-[86px] 2xl:pt-48 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[64px] h-auto min-h-[600px] ">
         <div className="max-w-7xl mx-auto"
         >
           <motion.div
@@ -16,7 +16,8 @@ export default function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: false }}
-          className="w-full max-w-[815px] flex flex-col gap-6 sm:gap-8 xl:gap-[40px] mb-6 sm:mb-8 xl:mb-[40px]">
+          className="w-full max-w-[815px] flex flex-col gap-6 sm:gap-8 xl:gap-[40px] mb-6 sm:mb-8 xl:mb-[40px]"
+          >
             <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-[64px] font-inter font-bold text-red_republic leading-[120%] h-auto xl:h-[154px] ">
               Power Your
               <br />
@@ -33,7 +34,7 @@ export default function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: false }}
-          className="flex flex-col-reverse sm:flex-row items-center justify-between gap-6 md:gap-8 lg:gap-12">
+          className="flex flex-col-reverse bg-white sm:flex-row items-center justify-between gap-6 md:gap-8 lg:gap-12">
             {/* Features list column */}
             <div 
             
@@ -94,7 +95,7 @@ export default function Features() {
      
 
       {/* section 2 */}
-      <section className="px-4  sm:px-6 md:px-8 lg:px-12 xl:px-[64px] 2xl:px-24 pt-20 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-[82px] 2xl:pt-48 2xl:pb-32 ">
+      <section className="px-4  sm:px-6 md:px-8 lg:px-12 xl:px-[64px] 2xl:px-24 2xl:pb-32 pt-20  md:pt-[100px] xl:pt-[182px] 2xl:pt-48 ">
         <motion.div
         initial={{ opacity: 0, y:  50 }}
         whileInView={{ opacity: 1, y: 0 }}

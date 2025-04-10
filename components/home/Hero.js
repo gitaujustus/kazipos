@@ -94,11 +94,11 @@ export default function Hero() {
           A powerful POS system for Kenyan retail—perfect for small shops to large enterprises.
         </p>
 
-        <div className="flex gap-[40px] items-center justify-center">
+        <div className="flex gap-[30px] sm:gap-[40px] items-center justify-center">
           <button className="bg-neutral-light hover:bg-red_reign hover:border hover:border-e-neutral-highlight text-baragon_brown hover:text-white font-inter xl:w-[198px] xl:h-[48px] px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] relative z-20">
             Start Free Trial
           </button>
-          <button className="border border-white text-white font-inter xl:w-[198px] xl:h-[48px] p-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-white hover:text-red_reign relative z-20">
+          <button className="border border-white text-white font-inter xl:w-[198px] xl:h-[48px] px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-white hover:text-red_reign relative z-20">
             Book a Demo
           </button>
         </div>

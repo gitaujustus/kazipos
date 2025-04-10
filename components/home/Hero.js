@@ -6,37 +6,75 @@ export default function Hero() {
     {
       text: "AI-Powered",
       desc: "Handles stock, payments, trends, and more.",
-      position: { top: "5%", left: "5%" },
+      position: { top: "5%", left: "-20%" },
     },
     {
       text: "Customer Management",
       desc: "Track leads, campaigns, and loyalty.",
-      position: { top: "5%", right: "5%" },
+      position: { top: "5%", right: "-20%" },
     },
     {
       text: "Access Anywhere",
       desc: "Real-time, syncable data. Anytime, anywhere.",
-      position: { top: "25%", right: "0%" },
+      position: { top: "40%", right: "-20%" },
     },
     {
       text: "No Installation",
       desc: "Just open your browser—no setup needed.",
-      position: { bottom: "15%", right: "5%" },
+      position: { bottom: "10%", right: "-15%" },
     },
     {
       text: "User Access Limit",
       desc: "Control who sees what with user roles.",
-      position: { bottom: "5%", left: "50%", transform: "translateX(-50%)" },
+      position: { bottom: "0%", left: "50%", transform: "translateX(-50%)" },
     },
     {
       text: "Service Management",
       desc: "Handle services: bookings, repairs, & escalations.",
-      position: { bottom: "15%", left: "5%" },
+      position: { bottom: "10%", left: "-20%" },
     },
     {
       text: "Reports",
       desc: "Smart reports for sales, stock, profit & insights.",
-      position: { top: "25%", left: "0%" },
+      position: { top: "40%", left: "-20%" },
+    },
+  ];
+
+  const featuresSmall = [
+    {
+      text: "AI-Powered",
+      desc: "Handles stock, payments, trends, and more.",
+      position: { top: "3%", left: "-4%" },
+    },
+    {
+      text: "Customer Management",
+      desc: "Track leads, campaigns, and loyalty.",
+      position: { top: "5%", right: "-5%" },
+    },
+    {
+      text: "Access Anywhere",
+      desc: "Real-time, syncable data. Anytime, anywhere.",
+      position: { top: "35%", right: "-5%" },
+    },
+    {
+      text: "No Installation",
+      desc: "Just open your browser—no setup needed.",
+      position: { bottom: "15%", right: "0%" },
+    },
+    {
+      text: "User Access Limit",
+      desc: "Control who sees what with user roles.",
+      position: { bottom: "-10%", left: "50%", transform: "translateX(-50%)" },
+    },
+    {
+      text: "Service Management",
+      desc: "Handle services: bookings, repairs, & escalations.",
+      position: { bottom: "15%", left: "-3%" },
+    },
+    {
+      text: "Reports",
+      desc: "Smart reports for sales, stock, profit & insights.",
+      position: { top: "36%", left: "-3%" },
     },
   ];
 
@@ -68,7 +106,7 @@ export default function Hero() {
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="bg-black rounded-full border-4 border-red-500 p-2">
             <img
-              src="/barista.jpg"
+              src="/assets/Hero-Center.png"
               alt="Barista using POS"
               className="rounded-full w-48 h-48 sm:w-64 sm:h-64 object-cover border-4 border-white"
             />
@@ -83,28 +121,42 @@ export default function Hero() {
             </div>
           ))}
         </div>
+
+
+        {/* Feature bubbles for small screens */}
+        <div className="block lg:hidden">
+          {featuresSmall.map((featuresSmall, index) => (
+            <div key={index} className="absolute z-20" style={featuresSmall.position}>
+              <Feature icon={<Cloud />} text={featuresSmall.text} desc={featuresSmall.desc} />
+            </div>
+          ))}
+        </div>
+
+
+
+
       </div>
 
       {/* Feature bubbles for smaller screens */}
-      <div className="lg:hidden mt-10 px-4">
+      {/* <div className="lg:hidden mt-10 px-4">
         <div className="grid grid-cols-1 gap-6">
           {features.map((feature, index) => (
             <Feature key={index} icon={<Cloud />} text={feature.text} desc={feature.desc} />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
 
 function Feature({ icon, text, desc }) {
   return (
-    <div className="max-w-[262px] bg-white shadow-lg py-[26px] px-[25px] rounded-[30px]">
+    <div className="w-[150px] md:w-[262px]  max-w-[262px] bg-white shadow-lg py-[6px] md:py-[26px] px-[15px] md:px-[25px] rounded-[30px]">
       <div className="flex items-center gap-[10px]">
         {icon}
-        <h3 className="text-[12px] font-inter text-red_republic">{text}</h3>
+        <h3 className="text-[6px] md:text-[12px] font-inter text-red_republic">{text}</h3>
       </div>
-      <p className="text-[14px] text-neutral-dark">{desc}</p>
+      <p className="text-[7px] md:text-[14px] text-neutral-dark">{desc}</p>
     </div>
   );
 }

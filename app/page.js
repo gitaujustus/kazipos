@@ -22,7 +22,7 @@ export default function Home() {
   {/* Noise/dissolve overlay with tiny dots */}
   <div className="absolute inset-0 pointer-events-none bg-dot-pattern"></div>
 
-  <div className="relative w-full z-10 bg-green-300 mx-auto">
+  <div className="relative w-full z-10 mx-auto">
     <SectionLayout
       title="1. Easy Sales Management"
       description="Simplify your daily transactions with a user-friendly system that speeds up sales and reduces errors. Whether you're ringing up items, processing payments, or issuing receipts, KaziPOS makes it effortless—saving you time and keeping your customers happy. Perfect for busy Kenyan retailers who need quick, reliable tools at their fingertips."
@@ -52,7 +52,7 @@ export default function Home() {
     />
   </div>
 
-  <div className="relative flex justify-center mt-10 md:mt-20 mb-20 md:mb-40 w-full">
+  <div className="relative flex justify-center mt-10 md:mt-20 mb-20 w-full">
     <button className="bg-red_republic p-2 md:p-3 rounded-full w-40 md:w-48 h-12 text-center text-white font-inter text-sm md:text-base shadow-md hover:brightness-105 transition-all relative">
       Get Started
       <span className="absolute inset-0 rounded-full shadow-[inset_0px_-2px_10px_0px_rgba(0,0,0,0.25)] pointer-events-none"></span>

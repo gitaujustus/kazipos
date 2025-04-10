@@ -82,7 +82,7 @@ export default function Hero() {
     <div className="min-h-screen text-white flex flex-col items-center py-10 px-4 relative overflow-hidden">
       {/* SVG Background */}
       <div className="absolute inset-0 w-full h-full z-0">
-        <HeroGradient />
+        <HeroGradient className="h-full" />
       </div>
 
       {/* Content */}

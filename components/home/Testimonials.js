@@ -1,6 +1,6 @@
 'use client'
-import React, { useState, useEffect, useRef } from "react"
-import Image from "next/image"
+import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 const Testimonials = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -8,7 +8,7 @@ const Testimonials = () => {
     const [slideWidth, setSlideWidth] = useState(0);
     const autoScrollRef = useRef(null);
     const carouselRef = useRef(null);
-    
+
     const testimonials = [
         {
             description: '"KaziPOS has transformed how I run my shop in Nakuru. Before, I struggled with tracking sales and managing stock, but now everything is so easy. I can see what\'s selling and what needs restocking with just a few taps. It\'s saved me hours every week"',
@@ -52,7 +52,7 @@ const Testimonials = () => {
             let cardsToShow = 4;
             let cardWidth = 300;
             let gapSize = 20;
-            
+
             // Set cards per view based on screen width
             if (width < 640) {
                 cardsToShow = 1;
@@ -75,10 +75,10 @@ const Testimonials = () => {
                 cardWidth = Math.min(320, (width - 100 - gapSize * 3) / 4);
                 gapSize = 20;
             }
-            
+
             setCardsPerView(cardsToShow);
             setSlideWidth(cardWidth + gapSize);
-            
+
             // Update inline style for card width if carousel exists
             if (carouselRef.current) {
                 const cards = carouselRef.current.querySelectorAll('.testimonial-card');
@@ -88,10 +88,10 @@ const Testimonials = () => {
                 });
             }
         };
-        
+
         updateCarouselDimensions();
         window.addEventListener('resize', updateCarouselDimensions);
-        
+
         return () => {
             window.removeEventListener('resize', updateCarouselDimensions);
         };
@@ -101,52 +101,28 @@ const Testimonials = () => {
     useEffect(() => {
         const startAutoScroll = () => {
             autoScrollRef.current = setInterval(() => {
-                setCurrentSlide(prev => {
-                    if (prev >= testimonials.length * 2 - 1) {
-                        return testimonials.length;
-                    }
-                    return prev + 1;
-                });
+                setCurrentSlide(prev => (prev + 1) % circularTestimonials.length);
             }, 5000);
         };
-        
+
         startAutoScroll();
-        
+
         return () => {
             if (autoScrollRef.current) {
                 clearInterval(autoScrollRef.current);
             }
         };
-    }, [testimonials.length]);
-    
-    // Reset to original position after scrolling through first set
-    useEffect(() => {
-        if (currentSlide >= testimonials.length * 2) {
-            setTimeout(() => {
-                setCurrentSlide(testimonials.length);
-            }, 0);
-        }
-    }, [currentSlide, testimonials.length]);
+    }, []);
 
     const nextSlide = () => {
         if (autoScrollRef.current) {
             clearInterval(autoScrollRef.current);
         }
-        
-        setCurrentSlide(prev => {
-            if (prev >= testimonials.length * 2 - 1) {
-                return testimonials.length;
-            }
-            return prev + 1;
-        });
-        
+
+        setCurrentSlide(prev => (prev + 1) % circularTestimonials.length);
+
         autoScrollRef.current = setInterval(() => {
-            setCurrentSlide(prev => {
-                if (prev >= testimonials.length * 2 - 1) {
-                    return testimonials.length;
-                }
-                return prev + 1;
-            });
+            setCurrentSlide(prev => (prev + 1) % circularTestimonials.length);
         }, 5000);
     };
 
@@ -154,21 +130,11 @@ const Testimonials = () => {
         if (autoScrollRef.current) {
             clearInterval(autoScrollRef.current);
         }
-        
-        setCurrentSlide(prev => {
-            if (prev <= 0) {
-                return testimonials.length - 1;
-            }
-            return prev - 1;
-        });
-        
+
+        setCurrentSlide(prev => (prev - 1 + circularTestimonials.length) % circularTestimonials.length);
+
         autoScrollRef.current = setInterval(() => {
-            setCurrentSlide(prev => {
-                if (prev >= testimonials.length * 2 - 1) {
-                    return testimonials.length;
-                }
-                return prev + 1;
-            });
+            setCurrentSlide(prev => (prev + 1) % circularTestimonials.length);
         }, 5000);
     };
 
@@ -176,18 +142,18 @@ const Testimonials = () => {
         if (autoScrollRef.current) {
             clearInterval(autoScrollRef.current);
         }
-        
-        setCurrentSlide(testimonials.length + index);
-        
+
+        // Map the index to the middle set of testimonials for smooth looping
+        const targetIndex = testimonials.length + index;
+        setCurrentSlide(targetIndex);
+
         autoScrollRef.current = setInterval(() => {
-            setCurrentSlide(prev => {
-                if (prev >= testimonials.length * 2 - 1) {
-                    return testimonials.length;
-                }
-                return prev + 1;
-            });
+            setCurrentSlide(prev => (prev + 1) % circularTestimonials.length);
         }, 5000);
     };
+
+    // Calculate the displayed slide index for pagination
+    const displayedSlide = currentSlide % testimonials.length;
 
     return (
         <div className="flex flex-col items-center justify-center mb-[20px]">
@@ -253,8 +219,10 @@ const Testimonials = () => {
                         <button
                             key={index}
                             onClick={() => goToSlide(index)}
-                            className={`h-2 sm:h-3 w-2 sm:w-3 rounded-full transition-colors ${
-                                currentSlide % testimonials.length === index ? 'bg-red_reign' : 'bg-gray-300'
+                            className={`h-2 rounded-full transition-all duration-300 ${
+                                displayedSlide === index
+                                    ? 'w-8 bg-red_reign' // Active: longer bar
+                                    : 'w-2 bg-gray-300' // Inactive: small dot
                             }`}
                             aria-label={`Go to testimonial ${index + 1}`}
                         />
@@ -264,8 +232,6 @@ const Testimonials = () => {
         </div>
     );
 };
-
-export default Testimonials;
 
 const TestimonialCard = ({ description, name, title, image, isMiddle = false }) => {
     return (
@@ -308,3 +274,5 @@ const TestimonialCard = ({ description, name, title, image, isMiddle = false }) 
         </div>
     );
 };
+
+export default Testimonials;

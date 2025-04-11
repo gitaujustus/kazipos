@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
@@ -42,10 +42,9 @@ const Testimonials = () => {
         }
     ];
 
-    // Create a circular array for infinite scrolling
-    const circularTestimonials = [...testimonials, ...testimonials, ...testimonials];
+    const circularTestimonials = [...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials];
 
-    // Calculate responsive values on mount and window resize
+    // Calculate responsive values (unchanged)
     useEffect(() => {
         const updateCarouselDimensions = () => {
             const width = window.innerWidth;
@@ -53,7 +52,6 @@ const Testimonials = () => {
             let cardWidth = 300;
             let gapSize = 20;
 
-            // Set cards per view based on screen width
             if (width < 640) {
                 cardsToShow = 1;
                 cardWidth = Math.min(300, width - 40);
@@ -79,7 +77,6 @@ const Testimonials = () => {
             setCardsPerView(cardsToShow);
             setSlideWidth(cardWidth + gapSize);
 
-            // Update inline style for card width if carousel exists
             if (carouselRef.current) {
                 const cards = carouselRef.current.querySelectorAll('.testimonial-card');
                 cards.forEach(card => {
@@ -97,7 +94,7 @@ const Testimonials = () => {
         };
     }, []);
 
-    // Auto-scrolling functionality
+    // Auto-scrolling (unchanged)
     useEffect(() => {
         const startAutoScroll = () => {
             autoScrollRef.current = setInterval(() => {
@@ -114,13 +111,47 @@ const Testimonials = () => {
         };
     }, []);
 
+    // Handle hold start and end
+    const handleHoldStart = (e) => {
+        if (!e.target.closest('.nav-button') && autoScrollRef.current) {
+            clearInterval(autoScrollRef.current);
+            autoScrollRef.current = null;
+            document.addEventListener('mouseup', handleHoldEnd);
+            document.addEventListener('touchend', handleHoldEnd);
+        }
+    };
+
+    const handleHoldEnd = () => {
+        if (!autoScrollRef.current) {
+            autoScrollRef.current = setInterval(() => {
+                setCurrentSlide(prev => (prev + 1) % circularTestimonials.length);
+            }, 5000);
+        }
+        document.removeEventListener('mouseup', handleHoldEnd);
+        document.removeEventListener('touchend', handleHoldEnd);
+    };
+
+    // Attach hold event listeners
+    useEffect(() => {
+        const carousel = carouselRef.current;
+        if (carousel) {
+            carousel.addEventListener('mousedown', handleHoldStart);
+            carousel.addEventListener('touchstart', handleHoldStart);
+
+            return () => {
+                carousel.removeEventListener('mousedown', handleHoldStart);
+                carousel.removeEventListener('touchstart', handleHoldStart);
+                document.removeEventListener('mouseup', handleHoldEnd);
+                document.removeEventListener('touchend', handleHoldEnd);
+            };
+        }
+    }, []);
+
     const nextSlide = () => {
         if (autoScrollRef.current) {
             clearInterval(autoScrollRef.current);
         }
-
         setCurrentSlide(prev => (prev + 1) % circularTestimonials.length);
-
         autoScrollRef.current = setInterval(() => {
             setCurrentSlide(prev => (prev + 1) % circularTestimonials.length);
         }, 5000);
@@ -130,9 +161,7 @@ const Testimonials = () => {
         if (autoScrollRef.current) {
             clearInterval(autoScrollRef.current);
         }
-
         setCurrentSlide(prev => (prev - 1 + circularTestimonials.length) % circularTestimonials.length);
-
         autoScrollRef.current = setInterval(() => {
             setCurrentSlide(prev => (prev + 1) % circularTestimonials.length);
         }, 5000);
@@ -142,45 +171,37 @@ const Testimonials = () => {
         if (autoScrollRef.current) {
             clearInterval(autoScrollRef.current);
         }
-
-        // Map the index to the middle set of testimonials for smooth looping
         const targetIndex = testimonials.length + index;
         setCurrentSlide(targetIndex);
-
         autoScrollRef.current = setInterval(() => {
             setCurrentSlide(prev => (prev + 1) % circularTestimonials.length);
         }, 5000);
     };
 
-    // Calculate the displayed slide index for pagination
     const displayedSlide = currentSlide % testimonials.length;
 
     return (
         <div className="flex flex-col items-center justify-center mb-[20px]">
-            {/* Heading Section */}
             <h1 className="text-red_republic md:pt-[16px] pb-10 sm:pb-16 md:pb-20 font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-inter text-center">
                 <span>We let Our <span className="text-red_reign">Clients Success</span></span>
                 <br />
                 <span>Speak for us</span>
             </h1>
 
-            {/* Carousel Section */}
             <div className="w-full mx-auto px-4 sm:px-1 relative">
-                {/* Navigation Buttons - Hidden on mobile */}
                 <div className="hidden sm:block">
                     <button 
                         onClick={prevSlide}
-                        className="absolute left-4 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
+                        className="nav-button absolute left-4 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
                         aria-label="Previous testimonials"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M15 18l-6-6 6-6" />
                         </svg>
                     </button>
-                    
                     <button 
                         onClick={nextSlide}
-                        className="absolute right-4 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
+                        className="nav-button absolute right-4 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
                         aria-label="Next testimonials"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -189,7 +210,6 @@ const Testimonials = () => {
                     </button>
                 </div>
 
-                {/* Carousel Container */}
                 <div className="overflow-hidden mx-auto max-w-full" style={{ width: slideWidth * cardsPerView }}>
                     <div 
                         ref={carouselRef}
@@ -213,16 +233,13 @@ const Testimonials = () => {
                     </div>
                 </div>
 
-                {/* Pagination Dots */}
                 <div className="flex justify-center mt-6 sm:mt-8 gap-2">
                     {testimonials.map((_, index) => (
                         <button
                             key={index}
                             onClick={() => goToSlide(index)}
                             className={`h-2 rounded-full transition-all duration-300 ${
-                                displayedSlide === index
-                                    ? 'w-8 bg-red_reign' // Active: longer bar
-                                    : 'w-2 bg-gray-300' // Inactive: small dot
+                                displayedSlide === index ? 'w-8 bg-red_reign' : 'w-2 bg-gray-300'
                             }`}
                             aria-label={`Go to testimonial ${index + 1}`}
                         />
@@ -233,23 +250,17 @@ const Testimonials = () => {
     );
 };
 
+// TestimonialCard component remains unchanged
 const TestimonialCard = ({ description, name, title, image, isMiddle = false }) => {
     return (
         <div
-            className={`${
-                isMiddle ? 'bg-red_reign' : 'bg-neutral-light'
-            } flex flex-col justify-between rounded-3xl h-[400px] md:h-[420px] transition-all duration-300 py-8 sm:py-10 md:py-12 px-4 sm:px-5 md:px-6`}
+            className={`${isMiddle ? 'bg-red_reign' : 'bg-neutral-light'} flex flex-col justify-between rounded-3xl h-[400px] md:h-[420px] transition-all duration-300 py-8 sm:py-10 md:py-12 px-4 sm:px-5 md:px-6`}
         >
-            {/* Text Container */}
             <div className="flex-1 mb-6">
-                <p className={`font-inter text-sm sm:text-base leading-6 sm:leading-7 ${
-                    isMiddle ? 'text-white' : 'text-red_reign'
-                }`}>
+                <p className={`font-inter text-sm sm:text-base leading-6 sm:leading-7 ${isMiddle ? 'text-white' : 'text-red_reign'}`}>
                     {description}
                 </p>
             </div>
-
-            {/* Profile Div */}
             <div className="w-full">
                 <div className="flex items-center gap-3 sm:gap-4">
                     <Image
@@ -257,9 +268,7 @@ const TestimonialCard = ({ description, name, title, image, isMiddle = false }) 
                         alt={`${name}'s profile`}
                         width={55}
                         height={55}
-                        className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full border ${
-                            isMiddle ? 'border-white' : 'border-red_reign'
-                        } object-cover`}
+                        className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full border ${isMiddle ? 'border-white' : 'border-red_reign'} object-cover`}
                     />
                     <div className={`${isMiddle ? 'text-white' : 'text-red_reign'} flex flex-col px-2`}>
                         <h3 className="font-inter font-medium text-base sm:text-lg leading-tight">

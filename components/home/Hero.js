@@ -98,10 +98,10 @@ export default function Hero() {
           {/* <button className="bg-red_shimmer hover:bg-white hover:border hover:border-white text-baragon_brown font-inter xl:w-[198px] xl:h-[48px] px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(255,255,255,255.25)] relative z-20 transition-colors duration-700 ease-in-out">
             Start Free Trial
           </button> */}
-          <button className="border border-red_shimmer hover:border-0 bg-red_shimmer hover:bg-white  text-baragon_brown font-inter xl:w-[198px] xl:h-[48px] px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(254,224,218,0.25)] r hover:text-baragon_brown relative z-20 transition-colors duration-700 ease-in-out">
-            Book a Demo
+          <button className="text-nowrap border border-red_shimmer hover:border-0 bg-red_shimmer hover:bg-white  text-baragon_brown font-inter px-6 xl:w-[198px] xl:h-[48px] xl:px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(254,224,218,0.25)] r hover:text-baragon_brown relative z-20 transition-colors duration-700 ease-in-out">
+            Start Free Trial
           </button>
-          <button className="border border-white hover:border-0  text-white font-inter xl:w-[198px] xl:h-[48px] px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-red_shimmer hover:text-baragon_brown relative z-20 transition-colors duration-700 ease-in-out">
+          <button className= "px-6 text-nowrap border border-white hover:border-0  text-white font-inter xl:w-[198px] xl:h-[48px] xl:px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-red_shimmer hover:text-baragon_brown relative z-20 transition-colors duration-700 ease-in-out">
             Book a Demo
           </button>
         </div>

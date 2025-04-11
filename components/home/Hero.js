@@ -95,7 +95,7 @@ export default function Hero() {
         </p>
 
         <div className="flex gap-[30px] sm:gap-[40px] items-center justify-center">
-          <button className="bg-neutral-light hover:bg-red_reign hover:border hover:border-e-neutral-highlight text-baragon_brown hover:text-white font-inter xl:w-[198px] xl:h-[48px] px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] relative z-20">
+          <button className="bg-red_shimmer hover:bg-red_reign hover:border hover:border-e-neutral-highlight text-baragon_brown hover:text-white font-inter xl:w-[198px] xl:h-[48px] px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] relative z-20">
             Start Free Trial
           </button>
           <button className="border border-white text-white font-inter xl:w-[198px] xl:h-[48px] px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-white hover:text-red_reign relative z-20">
@@ -138,8 +138,8 @@ export default function Hero() {
 
 function Feature({ icon, text, desc }) {
   return (
-    <div className="w-[150px] md:w-[262px] max-w-[262px] bg-white shadow-lg py-[6px] md:py-[26px] px-[15px] md:px-[25px] rounded-[30px]">
-      <div className="flex items-center gap-[10px]">
+    <div className="w-[150px] md:w-[262px] max-w-[262px] bg-red_shimmer shadow-lg py-[6px] md:py-[26px] px-[15px] md:px-[25px] rounded-[30px]">
+      <div className="flex items-center gap-[10px]"> 
         {icon}
         <h3 className="text-[6px] md:text-[12px] font-inter text-red_republic">
           {text}
@@ -154,7 +154,7 @@ function ConcentricRingsWithGradient() {
   const rings = [49.95, 75, 100.05, 124.95, 150];
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden">
+    <div className="absolute inset-0 overflow-hidden">
       {rings.map((percent, i) => (
         <div
           key={i}

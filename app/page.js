@@ -14,12 +14,14 @@ export default function Home() {
       <Hero />
 
       {/* Section 2 - Features */}
-      <section className="flex flex-col justify-center pt-12 md:pt-20">
+      <section className="flex flex-col justify-center px-[30px] sm:px-40px md:px-[62.44px] pt-12 md:pt-20">
         {/* Background image instead of dot pattern */}
         {/* <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/home/Noise-Texture.png')" }}></div> */}
         
         {/* Optional overlay to ensure text readability */}
         {/* <div className="absolute inset-0 bg-white opacity-100"></div> */}
+
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[64px] font-inter font-semibold text-red_republic text-center sm:pb-6">Key Benefits</h1>
 
 
         <div className="relative w-full z-10 mx-auto">

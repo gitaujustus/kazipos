@@ -76,76 +76,27 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="flex items-center justify-between  text-red_republic w-full xl:h-[76px] px-4 py-2 2xl:py-4 2xl:px-10   mx-auto relative z-20 font-inter border-b border-gray-300">
-      {/* Logo */}
-      <div className="flex items-center justify-between gap-1 md:gap-2 2xl:gap-4">
-        {/* <Logo width={20} height={20} className="text-red_shimmer" /> */}
+    <div className="flex items-center justify-between  text-red_republic  w-full xl:h-[76px] px-4 py-2 2xl:py-4 2xl:px-10   mx-auto relative z-20 font-inter border-b border-gray-300">
+   
+   
+      {/* Logo for mobile*/}
+      <div className="flex justify-between w-full md:hidden ">
+        <div className="flex items-center justify-between gap-1 md:gap-2 2xl:gap-4 ">
+          <Logo className="text-red_shimmer" />
+          <span className="lg:text-small xl:text-[20px] 2xl:text-[3rem]">Kazipos</span>
+        </div>
 
-        {/* Logo component to be commented and replaced with the one below it, The Image Component */}
-        <Logo className="text-red_shimmer" />
-
-       
-        <span className="lg:text-small xl:text-[20px] 2xl:text-[3rem]">Kazipos</span>
-      </div>
-
-      {/* Mobile Menu Button */}
-      <div className="md:hidden">
-        <button
-          ref={buttonRef}
-          onClick={toggleMenu}
-          className="focus:outline-none"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
-        </button>
-      </div>
-
-      {/* Desktop Navigation */}
-
-      <div className="hidden md:flex items-center justify-center gap-3 lg:gap-6 2xl:gap-8">
-        {menuItems.map((item) => (
-          <MotionLink
-            key={item.href}
-            href={item.href}
-            className="relative flex items-center justify-center text-[16px]"
+        {/* Mobile Menu Button */}
+        <div className="">
+          <button
+            ref={buttonRef}
+            onClick={toggleMenu}
+            className="focus:outline-none"
+            aria-label="Toggle menu"
           >
-            {pathname === item.href && (
-              <motion.div
-                layoutId="nav-highlight"
-                className="absolute inset-0 bg-baragon_brown rounded-full  "
-                style={{ zIndex: -1 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-              />
-            )}
-            <span
-              className={`relative z-10 px-2 lg:px-4 py-2 text-nowrap 2xl:text-[1.8rem] ${
-                pathname === item.href ? "text-white" : ""
-              }`}
-            >
-              {item.label}
-            </span>
-          </MotionLink>
-        ))}
-      </div>
-
-      {/* Desktop Auth Buttons */}
-      <div className="hidden md:flex items-center justify-between gap-4 xl:gap-[30px]">
-        <MotionLink
-          href="/sign_in"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.6 }}
-          className="border border-red_republic text-red_republic py-1 2xl:py-2  rounded-full text-tiny xl:text-[16px] 2xl:text-[1.8rem] w-32 xl:w-[182px]  2xl:w-38 xl:h-[40px] text-center flex items-center justify-center"
-        >
-          Login
-        </MotionLink>
-        <MotionLink
-          href="/sign_up"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.6 }}
-          className="bg-red_republic text-white py-1 2xl:py-2  rounded-full text-nowrap text-tiny xl:text-[16px] w-32 2xl:text-[1.8rem]   xl:w-[182px] 2xl:w-48 xl:h-[40px] text-center flex items-center justify-center"
-        > 
-          Get Started
-        </MotionLink>
+            {mobileMenuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu (Dropdown) */}
@@ -223,8 +174,74 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+
+
+
+      {/* Desktop Navigation */}
+      
+      <div className="hidden md:flex items-center justify-between gap-1 md:gap-2 2xl:gap-4 ">
+          <Logo className="text-red_shimmer" />
+          <span className="lg:text-small xl:text-[20px] 2xl:text-[3rem]">Kazipos</span>
+    </div>
+
+    <div className="flex items-center gap-[50px] lg:gap-[74px] ">
+      <div className="hidden md:flex items-center justify-center gap-3 lg:gap-6 2xl:gap-8">
+        {menuItems.map((item) => (
+          <MotionLink
+            key={item.href}
+            href={item.href}
+            className="relative flex items-center justify-center text-[16px]"
+          >
+            {pathname === item.href && (
+              <motion.div
+                layoutId="nav-highlight"
+                className="absolute inset-0 bg-baragon_brown rounded-full  "
+                style={{ zIndex: -1 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+              />
+            )}
+            <span
+              className={`relative z-10 px-2 lg:px-4 py-2 text-nowrap 2xl:text-[1.8rem] ${
+                pathname === item.href ? "text-white" : ""
+              }`}
+            >
+              {item.label}
+            </span>
+          </MotionLink>
+        ))}
+      </div>
+
+      {/* Desktop Auth Buttons */}
+      <div className="hidden md:flex items-center justify-between gap-4 xl:gap-[30px] ">
+        <MotionLink
+          href="/sign_in"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.6 }}
+          className="border border-red_republic text-red_republic py-1 2xl:py-2  rounded-full text-tiny xl:text-[16px] 2xl:text-[1.8rem] w-32 xl:w-[182px]  2xl:w-38 xl:h-[40px] text-center flex items-center justify-center"
+        >
+          Login
+        </MotionLink>
+        <MotionLink
+          href="/sign_up"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.6 }}
+          className="bg-red_republic text-white py-1 2xl:py-2  rounded-full text-nowrap text-tiny xl:text-[16px] w-32 2xl:text-[1.8rem]   xl:w-[182px] 2xl:w-48 xl:h-[40px] text-center flex items-center justify-center"
+        > 
+          Get Started
+        </MotionLink>
+      </div>
+      </div>
     </div>
   );
 };
 
 export default Navbar;
+
+
+
+
+
+
+
+

@@ -8,7 +8,7 @@ const SectionLayout = ({ title, description, image, isReversed }) => {
             } justify-between items-center md:items-start  gap-10 md:gap-[100px] 2xl:gap-[180px]`}
         >
             {/* Text Section */}
-            <div className="flex flex-col gap-6 w-full md:max-w-[641px] 2xl:max-w-[700px] text-center md:text-left">
+            <div className="flex flex-col gap-6 w-full md:max-w-[641px] 2xl:max-w-[700px]">
                 <h3 className="font-inter font-medium text-xl sm:text-3xl md:text-[36px] 2xl:text-[48px] leading-snug md:leading-[120%]">
                     {title}
                 </h3>

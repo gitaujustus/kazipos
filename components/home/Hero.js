@@ -6,12 +6,12 @@ export default function Hero() {
     {
       text: "AI-Powered",
       desc: "Handles stock, payments, trends, and more.",
-      position: { top: "27%", left: "-15%" },
+      position: { top: "25%", left: "-15%" },
     },
     {
       text: "Customer Management",
       desc: "Track leads, campaigns, and loyalty.",
-      position: { top: "25%", right: "-20%" },
+      position: { top: "25%", right: "-17%" },
     },
     {
       text: "Access Anywhere",
@@ -21,12 +21,12 @@ export default function Hero() {
     {
       text: "No Installation",
       desc: "Just open your browser—no setup needed.",
-      position: { bottom: "10%", right: "-13%" },
+      position: { bottom: "8%", right: "-13%" },
     },
     {
       text: "User Access Limit",
       desc: "Control who sees what with user roles.",
-      position: { bottom: "-8%", left: "50%", transform: "translateX(-50%)" },
+      position: { bottom: "-9%", left: "50%", transform: "translateX(-50%)" },
     },
     {
       text: "Service Management",
@@ -36,7 +36,7 @@ export default function Hero() {
     {
       text: "Reports",
       desc: "Smart reports for sales, stock, profit & insights.",
-      position: { top: "53%", left: "-20%" },
+      position: { top: "52%", left: "-20%" },
     },
   ];
 
@@ -79,9 +79,9 @@ export default function Hero() {
   ];
 
   return (
-    <div className="min-h-screen text-white flex flex-col items-center py-10 px-4 relative overflow-hidden">
+    <div className=" text-white flex flex-col items-center py-10 px-4 relative overflow-hidden">
       {/* SVG Background */}
-      <div className="absolute inset-0 w-full h-full z-0 bg-red_republic">
+      <div className="absolute inset-0 w-full z-0 bg-red_republic">
         <HeroGradient className="h-full w-full" />
       </div>
 
@@ -95,10 +95,13 @@ export default function Hero() {
         </p>
 
         <div className="flex gap-[30px] sm:gap-[40px] items-center justify-center">
-          <button className="bg-red_shimmer hover:bg-red_reign hover:border hover:border-e-neutral-highlight text-baragon_brown hover:text-white font-inter xl:w-[198px] xl:h-[48px] px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] relative z-20">
+          {/* <button className="bg-red_shimmer hover:bg-white hover:border hover:border-white text-baragon_brown font-inter xl:w-[198px] xl:h-[48px] px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(255,255,255,255.25)] relative z-20 transition-colors duration-700 ease-in-out">
+            Start Free Trial
+          </button> */}
+          <button className="text-nowrap border border-red_shimmer hover:border-0 bg-red_shimmer hover:bg-white  text-baragon_brown font-inter px-6 xl:w-[198px] xl:h-[48px] xl:px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(254,224,218,0.25)] r hover:text-baragon_brown relative z-20 transition-colors duration-700 ease-in-out">
             Start Free Trial
           </button>
-          <button className="border border-white text-white font-inter xl:w-[198px] xl:h-[48px] px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-white hover:text-red_reign relative z-20">
+          <button className= "px-6 text-nowrap border border-white hover:border-0  text-white font-inter xl:w-[198px] xl:h-[48px] xl:px-[15px] py-[10px] rounded-[35px] shadow-[2px_2px_15px_rgba(0,0,0,0.25),inset_0px_-2px_10px_rgba(0,0,0,0.25)] hover:bg-red_shimmer hover:text-baragon_brown relative z-20 transition-colors duration-700 ease-in-out">
             Book a Demo
           </button>
         </div>
@@ -154,7 +157,7 @@ function ConcentricRingsWithGradient() {
   const rings = [49.95, 75, 100.05, 124.95, 150];
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 ">
       {rings.map((percent, i) => (
         <div
           key={i}
@@ -176,3 +179,4 @@ function ConcentricRingsWithGradient() {
     </div>
   );
 }
+

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Locations } from "@/components/icons";
+import { Email, Locations, Phone } from "@/components/icons";
 import ContactForm from "@/components/contactForm";
 
 const Contacts = () => {
@@ -35,15 +35,15 @@ const Contacts = () => {
 
         <div className="flex flex-col gap-[11px]">
           <p className="">
-            <span className="text-[18px] sm:text-[20px] md:text-[22px] xl:text-[24px] font-inter font-medium text-baragon_brown">
+            <span className="text-[18px] sm:text-[20px] md:text-[22px] xl:text-[24px] font-inter font-medium text-baragon_brown ">
             Contact Information
             </span>
           </p>
-          <p className="font-inter font-normal text-[16px] sm:text-[18px] xl:text-[20px] text-baragon_brown">
-          Email: info@kazipos.co.ke
+          <p className="font-inter font-normal text-[16px] sm:text-[18px] xl:text-[20px] text-baragon_brown flex items-center gap-[8px]">
+           <Email/> <span>Email: info@kazipos.co.ke</span>
           </p>
-          <p className="font-inter font-normal text-[16px] sm:text-[18px] xl:text-[20px] text-baragon_brown">
-          Phone: +254 113 306358,+254 113 305897
+          <p className="font-inter font-normal text-[16px] sm:text-[18px] xl:text-[20px] text-baragon_brown flex items-center gap-[8px]">
+          <Phone/> <span>+254 113 306358,+254 113 305897</span>
           </p>
         </div>
       </div>

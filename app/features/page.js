@@ -24,7 +24,7 @@ export default function Features() {
               Business with KaziPOS
             </h1>
 
-            <p className="text-sm sm:text-base md:text-lg xl:text-[18px] font-inter font-medium leading-[120%] w-full max-w-[488px] text-baragon_brown">
+            <p className="text-sm sm:text-base md:text-lg xl:text-[18px] font-inter font-semibold leading-[120%] w-full max-w-[488px] text-baragon_brown">
               One POS to simplify sales, manage stock, and grow your customer base
             </p>
           </motion.div>

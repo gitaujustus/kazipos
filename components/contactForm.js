@@ -196,7 +196,7 @@ const ContactForm = () => {
               htmlFor="terms"
               className="text-[14px] sm:text-[15px] xl:text-[16px] text-black font-inter font-normal"
             >
-              I agree to receive communications from KaziAfya
+              I agree to receive communications from KaziPos
             </label>
             {errors.agreeToTerms && (
               <p className="text-red_republic text-[12px] mt-1">

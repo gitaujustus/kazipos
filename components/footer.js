@@ -10,14 +10,13 @@ const Footer = () => {
         {/* Part one */}
         <div className="flex items-center text-center justify-center md:text-left  md:justify-start  flex-col gap-6 w-full md:w-2/5 lg:w-[472px]">
           <div className="w-full flex justify-center md:justify-start">
-            {/* <Image
-              src="/assets/Kazi Afya Logo.svg"
+            <Image
+              src="/KP.png"
               alt="logo"
               width={1000}
               height={500}
-              className="w-40 sm:w-48 md:w-56 lg:w-64 2xl:w-72"
-            /> */}
-            <Logooooo/>
+              className="w-24 md:w-32 2xl:w-56"
+            />
           </div>
 
           <p className="text-sm sm:text-base lg:text-[16px] 2xl:text-xl leading-[24px] text-baragon_brown font-normal ">
@@ -106,9 +105,9 @@ const Footer = () => {
             </p>
           </div>
           <div className="mt-2 2xl:mt-5">
-            <p className="text-sm sm:text-[16px] leading-[24px] font-normal font-inter">
-              Phone: +254 113 306358, +254 113 305897
-            </p>
+            <div className="text-sm sm:text-[16px] leading-[24px] font-normal font-inter flex  gap-2 py-[10px]">
+              <p>Phone:</p> <p>+254 113 306358, <br /> +254 113 305897</p>
+            </div>
             <p className="text-sm sm:text-[16px] leading-[24px] font-normal font-inter">
               Email: info@kazipos.co.ke
             </p>

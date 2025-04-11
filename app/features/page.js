@@ -78,7 +78,7 @@ export default function Features() {
 
             {/* Image column */}
             <div 
-            className="w-full  sm:w-[90%]  lg:w-[100%] h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px]  md:mt-[-100px] relative">
+            className="w-full  sm:w-[90%]  lg:w-[100%]   xl:mr-[-110px] 2xl:mr-[-190px] h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px]  md:mt-[-100px] relative">
               <Image
                 src="/assets/features/illustrations.svg"
                 alt="Person using KaziPOS software with analytics dashboard"

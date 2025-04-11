@@ -1,10 +1,13 @@
-
 "use client";
 import { TickIcon, TickWhiteIcon } from "@/components/icons";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Pricing = () => {
+
+    const [isToggled, setIsToggled] = useState(false);
+  const [isFlipping, setIsFlipping] = useState(false);
+
   const basicPlanIncluded = [
     "Sales Tracking",
     "Basic Inventory Management",
@@ -33,10 +36,19 @@ const Pricing = () => {
     "Customizable POS Interface",
   ];
 
-  const [isToggled, setIsToggled] = useState(false);
+
+  // const handleToggle = () => {
+  //   setIsToggled(!isToggled);
+  // };
 
   const handleToggle = () => {
-    setIsToggled(!isToggled);
+    setIsFlipping(true);
+    setTimeout(() => {
+      setIsToggled(!isToggled);
+      setTimeout(() => {
+        setIsFlipping(false);
+      }, 300);
+    }, 300);
   };
 
   // Pricing calculations (10% discount for annual)
@@ -75,12 +87,37 @@ const Pricing = () => {
     }
   };
 
-  // Animation for price change
+  // // Animation for price change
   const priceAnimationVariants = {
     initial: { opacity: 0, y: 10 },
     animate: { opacity: 1, y: 0, transition: { duration: 0.3 } },
     exit: { opacity: 0, y: -10, transition: { duration: 0.2 } }
   };
+
+
+    // Card animation for flip
+    const cardVariants = {
+      initial: {
+        rotateY: 0,
+      },
+      flipping: {
+        rotateY: 90,
+        transition: {
+          duration: 0.4,
+          ease: "easeInOut",
+        },
+      },
+      flipped: {
+        rotateY: 0,
+        transition: {
+          duration: 0.4,
+          ease: "easeInOut",
+        },
+      },
+    };
+
+
+
 
   return (
     <main className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[64px] pb-[120px]">
@@ -95,45 +132,42 @@ const Pricing = () => {
           Affordable Pricing
         </h1>
 
-        {/* Toggle button */}
-        <div className="flex items-center gap-[14px] h-[30px] md:h-[40px] px-2 sm:px-4 w-[200px] justify-center mx-auto">
-          <span className="text-[18px] md:text-[20px] font-medium text-baragon_brown font-inter leading-[120%]">
-            Monthly
-          </span>
+<div className="flex items-center justify-center rounded-full px-2 sm:px-4 py-[30px] sm:py-[40px] md:py-[59px] w-[200px] mx-auto">
+        <span className="text-[20px] font-semibold text-black mr-2">
+          Monthly
+        </span>
+        <div
+          className="relative inline-flex items-center cursor-pointer"
+          onClick={handleToggle}
+        >
           <div
-            className="relative inline-flex items-center cursor-pointer"
-            onClick={handleToggle}
+            className={`w-10 sm:w-11 h-5 sm:h-6 rounded-full transition-colors duration-300 ${
+              isToggled ? "bg-red_republic" : "bg-red_republic"
+            }`}
           >
             <div
-              className={`w-10 sm:w-11 h-5 sm:h-6 rounded-full transition-colors duration-300 bg-red_republic`}
-            >
-              <div
-                className={`w-4 sm:w-5 h-4 sm:h-5 bg-white rounded-full shadow-md absolute top-0.5 transition-transform duration-300 ${
-                  isToggled ? "translate-x-5 sm:translate-x-5" : "left-0.5"
-                }`}
-              ></div>
-            </div>
+              className={`w-4 sm:w-5 h-4 sm:h-5 bg-white rounded-full shadow-md absolute top-0.5 transition-transform duration-300 ${
+                isToggled ? "translate-x-5 sm:translate-x-5" : "left-0.5"
+              }`}
+            ></div>
           </div>
-          <span className="text-[18px] md:text-[20px] font-medium text-baragon_brown font-inter leading-[120%]">
-            Annually
-          </span>
         </div>
+        <span className="text-[20px] font-semibold text-black ml-2">
+          Annually
+        </span>
+      </div>
       </motion.div>
 
       <section className="flex flex-wrap gap-10 md:gap-6 justify-between">
         {/* Basic Plan */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          viewport={{ once: false }}
-          className="p-[20px] sm:p-[25px] md:p-[30px] rounded-[15px] sm:rounded-[20px] flex flex-col gap-[8px] sm:gap-[10px] bg-white w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[28vw]"
-          style={{
-            boxShadow: "0px 0px 3.8px 0px rgba(0, 87, 184, 0.25)",
-          }}
-          variants={cardAnimationVariants}
-          animate={isToggled ? "annual" : "monthly"}
-          key={`basic-${isToggled ? "annual" : "monthly"}`}
+        className="p-[20px] sm:p-[25px] md:p-[30px] rounded-[15px] sm:rounded-[20px] flex flex-col gap-[8px] sm:gap-[10px] bg-white w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[28vw]"
+        style={{
+          boxShadow: "0px 0px 3.8px 0px rgba(0, 87, 184, 0.25)",
+          transformStyle: "preserve-3d",
+        }}
+        variants={cardVariants}
+        animate={isFlipping ? "flipping" : "flipped"}
         >
           <div className="flex flex-col gap-[15px] sm:gap-[20px] md:gap-[27px] leading-[120%] text-baragon_brown">
             <h3 className="text-[20px] sm:text-[22px] md:text-[24px] font-inter font-semibold">
@@ -187,18 +221,14 @@ const Pricing = () => {
 
         {/* Professional Plan */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          viewport={{ once: false }}
+         
+          variants={cardVariants}
+          animate={isFlipping ? "flipping" : "flipped"}
           className="p-[20px] font-inter sm:p-[25px] md:p-[30px] rounded-[15px] sm:rounded-[20px] flex flex-col gap-[8px] sm:gap-[10px] bg-red-700 text-white w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[28vw]"
           style={{
             boxShadow: "0px 0px 3.8px 0px rgba(0, 87, 184, 0.25)",
           }}
-          variants={cardAnimationVariants}
-          animate={isToggled ? "annual" : "monthly"}
-          key={`professional-${isToggled ? "annual" : "monthly"}`}
-        >
+        > 
           <div className="flex flex-col gap-[15px] sm:gap-[20px] md:gap-[27px] leading-[120%]">
             <h3 className="text-[20px] sm:text-[22px] md:text-[24px] font-inter font-semibold">
               Professional Plan
@@ -250,17 +280,12 @@ const Pricing = () => {
 
         {/* Enterprise Plan */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          viewport={{ once: false }}
           className="p-[20px] sm:p-[25px] md:p-[30px] rounded-[15px] sm:rounded-[20px] flex flex-col gap-[8px] sm:gap-[10px] bg-white w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[28vw]"
           style={{
             boxShadow: "0px 0px 3.8px 0px rgba(0, 87, 184, 0.25)",
           }}
-          variants={cardAnimationVariants}
-          animate={isToggled ? "annual" : "monthly"}
-          key={`enterprise-${isToggled ? "annual" : "monthly"}`}
+            variants={cardVariants}
+          animate={isFlipping ? "flipping" : "flipped"}
         >
           <div className="flex font-inter text-baragon_brown flex-col gap-[15px] sm:gap-[20px] md:gap-[27px] leading-[120%]">
             <h3 className="text-[20px] sm:text-[22px] md:text-[24px] font-inter font-semibold">
@@ -322,3 +347,5 @@ const Pricing = () => {
 };
 
 export default Pricing;
+
+

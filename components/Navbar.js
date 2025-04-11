@@ -80,10 +80,18 @@ const Navbar = () => {
    
    
       {/* Logo for mobile*/}
-      <div className="flex justify-between w-full md:hidden ">
+      <div className="flex justify-between items-center w-full md:hidden ">
         <div className="flex items-center justify-between gap-1 md:gap-2 2xl:gap-4 ">
-          <Logo className="text-red_shimmer" />
-          <span className="lg:text-small xl:text-[20px] 2xl:text-[3rem]">Kazipos</span>
+        <div className="w-full flex justify-center md:justify-start">
+            <Image
+              src="/KP.png"
+              alt="logo"
+              width={1000}
+              height={500}
+              className="w-20 sm:w-24 md:w-32 2xl:w-56"
+            />
+          </div>
+          {/* <Logo className="text-red_shimmer" /> */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -181,8 +189,16 @@ const Navbar = () => {
       {/* Desktop Navigation */}
       
       <div className="hidden md:flex items-center justify-between gap-1 md:gap-2 2xl:gap-4 ">
-          <Logo className="text-red_shimmer" />
-          <span className="lg:text-small xl:text-[20px] 2xl:text-[3rem]">Kazipos</span>
+          {/* <Logo className="text-red_shimmer" /> */}
+          <div className="w-full flex justify-center md:justify-start">
+            <Image
+              src="/KP.png"
+              alt="logo"
+              width={1000}
+              height={500}
+              className="w-24 md:w-32"
+            />
+          </div>
     </div>
 
     <div className="flex items-center gap-[50px] lg:gap-[74px] ">

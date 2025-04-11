@@ -28,10 +28,11 @@ const FeatureSection = ({
         </p>
       </div>
       <Link href={link}>
-        <button className="font-inter font-normal text-sm md:text-base lg:text-[16px] leading-normal lg:leading-[28px] text-white w-full md:w-auto lg:w-[167px] flex items-center justify-center md:justify-start gap-2 lg:gap-[10px] h-10 md:h-12 lg:h-[48px]  rounded-full lg:rounded-[35px]">
+        {/* <button className="font-inter font-normal text-sm md:text-base lg:text-[16px] px-2 py-1 text-nowrap hover:border-2 hover:border-white  leading-normal lg:leading-[28px] text-white w-full md:w-auto  flex items-center justify-center md:justify-start gap-2 lg:gap-[10px] h-10 md:h-12 lg:h-[48px]  rounded-full lg:rounded-[35px]">
           <span>Get Started Today</span>
           <NextIcon />
-        </button>
+        </button> */}
+        <ButtonWithHover />
       </Link>
     </motion.div>
   );
@@ -87,3 +88,36 @@ const FeatureSection = ({
 };
 
 export default FeatureSection;
+
+
+
+const ButtonWithHover = () => {
+  return (
+    <motion.button
+  className="font-inter font-normal text-sm md:text-base lg:text-[16px] px-3 py-1 text-nowrap leading-normal lg:leading-[28px] text-white w-full md:w-auto flex items-center justify-center md:justify-start gap-2 lg:gap-[10px] h-10 md:h-12 lg:h-[48px] rounded-full lg:rounded-[35px] border-2 border-transparent"
+  variants={{
+    initial: {
+      borderWidth: 2,
+      borderColor: 'rgba(255, 255, 255, 0)',
+      boxShadow: '0 0 0 rgba(255, 255, 255, 0)',
+    },
+    hover: {
+      borderWidth: 2,
+      borderColor: 'rgba(255, 255, 255, 1)',
+      boxShadow: '0 0 8px rgba(255, 255, 255, 0.5)',
+      transition: {
+        duration: 0.3,
+        ease: 'easeOut',
+      },
+    },
+  }}
+  initial="initial"
+  whileHover="hover"
+>
+  <span>Get Started Today</span>
+  <NextIcon />
+</motion.button>
+  )
+}
+
+

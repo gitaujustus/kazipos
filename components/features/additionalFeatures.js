@@ -64,7 +64,7 @@ const AdditionalFeatures = () => {
               boxShadow:
                 "2px 2px 15px 0px rgba(0, 0, 0, 0.25), inset 0px -2px 10px 0px rgba(0, 0, 0, 0.25)",
             }}
-            className="mt-[40px] w-[198px] gap-[10px] bg-red_republic h-[48px] text-red_shimmer text-[16px] leading-[100%] font-400 p-[10px] rounded-[35px]"
+            className="mt-[40px] w-[198px] gap-[10px] bg-red_republic h-[48px] text-red_shimmer text-[16px] leading-[100%] font-400 p-[10px] rounded-[35px] hover:bg-red_reign transition-all duration-300 cursor-pointer"
           >
             Get Started Today
           </button>

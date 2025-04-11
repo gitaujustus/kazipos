@@ -196,7 +196,7 @@ const ContactForm = () => {
               htmlFor="terms"
               className="text-[14px] sm:text-[15px] xl:text-[16px] text-black font-inter font-normal"
             >
-              I agree to receive communications from KaziAfya
+              I agree to receive communications from KaziPos
             </label>
             {errors.agreeToTerms && (
               <p className="text-red_republic text-[12px] mt-1">
@@ -211,7 +211,7 @@ const ContactForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="py-[8px] sm:py-[9px] xl:py-[10px] px-[20px] sm:px-[25px] xl:px-[30px] bg-red_republic hover:bg-red_republic transition-all duration-700 ease-in-out w-[120px] sm:w-[132px] text-white text-[14px] sm:text-[15px] xl:text-[16px] font-inter font-normal rounded-[30px] flex gap-[10px] items-center justify-center disabled:bg-red_reign disabled:cursor-not-allowed"
+            className="py-[8px] sm:py-[9px] xl:py-[10px] px-[20px] sm:px-[25px] xl:px-[30px] bg-red_republic hover:bg-red_reign transition-all duration-700 ease-in-out w-[120px] sm:w-[132px] text-white text-[14px] sm:text-[15px] xl:text-[16px] font-inter font-normal rounded-[30px] flex gap-[10px] items-center justify-center disabled:bg-red_reign cursor-pointer disabled:cursor-not-allowed"
           >
             <span>{isSubmitting ? "Sending..." : "Send"}</span>
             {!isSubmitting && <SendIcon />}

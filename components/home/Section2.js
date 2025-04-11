@@ -3,9 +3,9 @@ import Image from 'next/image';
 const SectionLayout = ({ title, description, image, isReversed }) => {
     return (
         <div
-            className={` mx-auto my-8 flex flex-col-reverse ${
+            className={` mx-auto my-16 flex flex-col-reverse ${
                 isReversed ? 'md:flex-row-reverse' : 'md:flex-row'
-            } items-center md:items-start  gap-10 md:gap-[100px] 2xl:gap-[180px] px-4 md:px-16`}
+            } justify-between items-center md:items-start  gap-10 md:gap-[100px] 2xl:gap-[180px] px-4 md:px-16`}
         >
             {/* Text Section */}
             <div className="flex flex-col gap-6 w-full md:max-w-[493px] 2xl:max-w-[700px] text-center md:text-left">

@@ -25,8 +25,8 @@ export const Cloud = () => (
 );
 
 
-export const HeroGradient = ({clasName=""}) => (
-    <svg className="" viewBox="0 0 1440 1932" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const HeroGradient = ({className=""}) => (
+    <svg className={className} viewBox="0 0 1440 1932" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_f_3220_2435)">
 <rect y="25.9473" width="1537" height="1677.81" fill="#B20202"/>
 <ellipse cx="340.5" cy="493.117" rx="474.5" ry="467.17" fill="#B20202"/>

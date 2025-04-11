@@ -9,16 +9,18 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="bg-gradient-to-r from-red_republic to-[#3f0101] h-[100vh]">
+    <main className="">
+      {/* [#3f0101] */}
       <Hero />
 
       {/* Section 2 - Features */}
-      <section className="min-h-screen relative flex flex-col justify-center py-12 md:py-20">
+      <section className="flex flex-col justify-center pt-12 md:pt-20">
         {/* Background image instead of dot pattern */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/home/Noise-Texture.png')" }}></div>
+        {/* <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/home/Noise-Texture.png')" }}></div> */}
         
         {/* Optional overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-white opacity-100"></div>
+        {/* <div className="absolute inset-0 bg-white opacity-100"></div> */}
+
 
         <div className="relative w-full z-10 mx-auto">
           <SectionLayout
@@ -57,6 +59,7 @@ export default function Home() {
           </button>
         </div>
       </section>
+      
 
       {/* Testimonials Section  */}
       {/* <TestimonialCarousel /> */}
